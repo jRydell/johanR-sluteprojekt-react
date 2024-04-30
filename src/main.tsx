@@ -4,10 +4,10 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import NotFound from "./routes/NotFound";
-import Library from "./routes/MyReadBooks";
 import Book from "./routes/Book";
 import Search from "./routes/Search";
 import FavoriteAuthors from "./routes/MyFavoriteAuthors";
+import MyReadBooks from "./routes/MyReadBooks";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-read-books",
-        element: <Library />,
+        element: <MyReadBooks />,
         children: [
           {
             path: "/my-read-books/:bookId",
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "/favorite-authors",
+        path: "/my-favorite-authors",
         element: <FavoriteAuthors />,
       },
     ],
