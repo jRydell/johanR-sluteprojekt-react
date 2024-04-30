@@ -7,11 +7,11 @@ This is the final project for the JS Frameworks F23 (VT24) course. The project i
 
 ## Technologies and Frameworks
 
-- **Vite**: A fast build tool for modern web projects, enabling lightning-fast development times and quicker page loads.
-- **React**: A popular JavaScript library for building user interfaces, enabling dynamic and interactive web applications.
-- **TypeScript**: A statically typed language built on top of JavaScript, providing increased safety and improved code quality.
-- **Tailwind CSS**: A user-friendly CSS framework enabling rapid and easy development of responsive and customizable user interfaces.
-- **Headless UI**: A component library focusing on accessibility and customizability, allowing the building of tailored user interfaces without sacrificing user experience.
+- **Vite**: A tool for building modern web projects quickly.
+- **React**: A JavaScript library for creating dynamic and interactive user interfaces.
+- **TypeScript**: A statically typed language that enhances JavaScript with additional safety and code quality features.
+- **Tailwind CSS**: A CSS framework for building responsive and customizable user interfaces with ease.
+- **Headless UI**: A component library focused on accessibility and customization, making it easy to create user-friendly interfaces without sacrificing performance.
 
 ## Getting Started
 
