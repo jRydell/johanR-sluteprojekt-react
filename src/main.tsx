@@ -4,10 +4,10 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import NotFound from "./routes/NotFound";
-import Library from "./routes/Library";
+import Library from "./routes/MyReadBooks";
 import Book from "./routes/Book";
 import Search from "./routes/Search";
-import FavoriteAuthors from "./routes/FavoriteAuthors";
+import FavoriteAuthors from "./routes/MyFavoriteAuthors";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +20,11 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/library",
+        path: "/my-read-books",
         element: <Library />,
         children: [
           {
-            path: "/library/:bookId",
+            path: "/my-read-books/:bookId",
             element: <Book />,
           },
         ],
