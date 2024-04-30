@@ -7,7 +7,7 @@ function Root() {
         <h1>Bookster</h1>
         <nav>
           <NavLink to="/"> Home </NavLink>
-          <NavLink to="/find-books"> Find books </NavLink>
+          <NavLink to="/search"> Search </NavLink>
           <NavLink to="/library"> Library </NavLink>
           <NavLink to="/favorite-authors"> Favorite Authors </NavLink>
         </nav>

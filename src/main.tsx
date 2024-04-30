@@ -6,7 +6,7 @@ import Root from "./routes/Root";
 import NotFound from "./routes/NotFound";
 import Library from "./routes/Library";
 import Book from "./routes/Book";
-import FindBooks from "./routes/FindBooks";
+import Search from "./routes/Search";
 import FavoriteAuthors from "./routes/FavoriteAuthors";
 
 const router = createBrowserRouter([
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: "/find-books",
-        element: <FindBooks />,
+        path: "/search",
+        element: <Search />,
       },
       {
         path: "/library",
