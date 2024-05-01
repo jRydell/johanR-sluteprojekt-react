@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import DisplayBookData from "./DisplayBookData";
 
-const SearchComponent: React.FC = () => {
+type SearchComponentProps = {
+  url: string;
+  placeholder: string;
+};
+
+const SearchComponent: React.FC<SearchComponentProps> = ({
+  url,
+  placeholder,
+}) => {
   const [query, setQuery] = useState("");
   const [searchUrl, setSearchUrl] = useState("");
 
   const handleSearch = () => {
-    const constructedUrl = `https://openlibrary.org/search.json?q=${query}`;
+    const constructedUrl = `${url}${query}`;
     setSearchUrl(constructedUrl);
   };
 
@@ -16,7 +24,7 @@ const SearchComponent: React.FC = () => {
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Enter search query"
+        placeholder={placeholder}
       />
       <button onClick={handleSearch}>Search</button>
       {searchUrl && <DisplayBookData url={searchUrl} />}

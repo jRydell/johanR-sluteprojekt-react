@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 
-// Define the type for the API response
-interface ApiResponse<T> {
+type ApiResponse<T> = {
   docs: T;
-  data?: T; // Add the 'data' property
-}
+  data?: T;
+};
 
-// Define the type for the book data
-interface Book {
+type Book = {
   key: string;
   title: string;
   author_name: string[];
   first_publish_year: number;
-}
+};
 
 export const useFetch = (url: string): ApiResponse<Book[]> | null => {
   const [data, setData] = useState<ApiResponse<Book[]> | null>(null);
