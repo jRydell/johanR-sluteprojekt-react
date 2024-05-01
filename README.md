@@ -1,6 +1,6 @@
 # 📚 Bookster: A Web Service for Book Enthusiasts
 
-This is the final project for the JS Frameworks F23 (VT24) course. The project is a web service targeting book enthusiasts, where users can search for books and retrieve information from Open Library. Bookster allows users to keep track of read books, mark favorite books/authors and create book reviews.
+Bookster is a web service targeting book enthusiasts, where users can search for books and retrieve information from Open Library. Bookster allows users to keep track of read books, mark favorite books/authors and create book reviews.
 
 
 
