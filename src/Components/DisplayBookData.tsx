@@ -21,7 +21,7 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
       <ul>
         {data.docs.map((item: Book) => (
           <li key={item.key}>
-            <h3>Title: {item.title}</h3>
+            <h2 className="text-orange-500">Title: {item.title}</h2>
             <h3>Authors: {item.author_name.join(", ")}</h3>
             <h3>First Publish Year: {item.first_publish_year}</h3>
             {item.cover_i &&
