@@ -3,7 +3,7 @@ import SearchComponent from "../Components/SearchComponent";
 const Search = () => {
   return (
     <>
-      <div>Search!</div>
+      <div>Find books</div>
 
       <SearchComponent
         placeholder={"Enter a book"}
