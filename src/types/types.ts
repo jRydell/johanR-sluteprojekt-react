@@ -13,6 +13,7 @@ export type Book = {
 };
 
 export type Author = {
+  key: string;
   name: string;
 };
 
