@@ -14,7 +14,9 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   const [searchUrl, setSearchUrl] = useState("");
 
   const handleSearch = () => {
-    const constructedUrl = `${url}${query}`;
+    const formattedQuery = query.replace(/ /g, "+");
+
+    const constructedUrl = `${url}${formattedQuery}`;
     setSearchUrl(constructedUrl);
   };
 

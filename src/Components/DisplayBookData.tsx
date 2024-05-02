@@ -31,7 +31,7 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
                 />
               ))}
             <h3>Title: {item.title}</h3>
-            <h3>Authors: {item.author_name.join(", ")}</h3>
+            <h3>Authors: {item.author_name}</h3>
             <h3>First Publish Year: {item.first_publish_year}</h3>
           </li>
         ))}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 type ApiResponse<T> = {
   docs: T;
-  data?: T;
+  data: T;
 };
 
 type Book = {
