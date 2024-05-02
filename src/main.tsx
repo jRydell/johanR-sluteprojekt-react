@@ -8,6 +8,7 @@ import Book from "./routes/Book";
 import Search from "./routes/Search";
 import FavoriteAuthors from "./routes/MyFavoriteAuthors";
 import MyReadBooks from "./routes/MyReadBooks";
+import { GlobalStateProvider } from "./Components/GlobalStateProvider";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GlobalStateProvider>
+      <RouterProvider router={router} />
+    </GlobalStateProvider>
   </React.StrictMode>
 );
