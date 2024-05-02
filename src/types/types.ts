@@ -1,3 +1,7 @@
+export type Action =
+  | { type: "ADD_BOOK"; payload: Book }
+  | { type: "ADD_AUTHOR"; payload: Author };
+
 export type Book = {
   key: string;
   title: string;
@@ -16,10 +20,6 @@ export type Author = {
   key: string;
   name: string;
 };
-
-export type Action =
-  | { type: "ADD_BOOK"; payload: Book }
-  | { type: "ADD_AUTHOR"; payload: Author };
 
 export type GlobalState = {
   readBooks: Book[];
