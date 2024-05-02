@@ -15,7 +15,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         <img
           src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
           alt="Book Cover"
-          className="h-48 w-full object-cover rounded mb-4"
+          className="h-50 w-full object-cover rounded mb-4"
         />
       ) : (
         <p>No cover available</p>
