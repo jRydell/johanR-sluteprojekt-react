@@ -1,5 +1,6 @@
 import React from "react";
 import { useFetch } from "../hooks/useFetch";
+import BookCard from "./BookCard";
 
 type Book = {
   key: string;
@@ -15,27 +16,11 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!data) return <p>No data found.</p>;
-
   return (
-    <div>
-      <ul>
-        {data.docs.map((item: Book) => (
-          <li key={item.key}>
-            {item.cover_i &&
-              (loading ? (
-                <p>Loading...</p>
-              ) : (
-                <img
-                  src={`https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`}
-                  alt="Book Cover"
-                />
-              ))}
-            <h3>Title: {item.title}</h3>
-            <h3>Authors: {item.author_name}</h3>
-            <h3>First Publish Year: {item.first_publish_year}</h3>
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {data.docs.map((book: Book) => (
+        <BookCard key={book.key} book={book} />
+      ))}
     </div>
   );
 };
