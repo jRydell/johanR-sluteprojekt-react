@@ -18,12 +18,12 @@ export const useFetch = <T>(url: string): ApiResponse<T> => {
       setError(null);
 
       try {
-        const resp = await fetch(url);
-        if (!resp.ok) {
-          throw new Error(`An error occurred: ${resp.statusText}`);
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`An error occurred: ${response.statusText}`);
         }
 
-        const jsonData: T = await resp.json();
+        const jsonData: T = await response.json();
         setData(jsonData);
       } catch (error: any) {
         setError(error.message);
