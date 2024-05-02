@@ -11,7 +11,7 @@ type Book = {
 };
 
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
-  const { data, loading, error } = useFetch<Book[]>(url) as Response<Book[]>;
+  const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;

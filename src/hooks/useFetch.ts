@@ -1,19 +1,14 @@
 import { useState, useEffect } from "react";
 
 type ApiResponse<T> = {
-  docs: T;
-  data: T;
+  docs: T | null;
+  data: T | null;
+  loading: boolean;
+  error: string | null;
 };
 
-type Book = {
-  key: string;
-  title: string;
-  author_name: string[];
-  first_publish_year: number;
-};
-
-export const useFetch = (url: string): ApiResponse<Book[]> | null => {
-  const [data, setData] = useState<ApiResponse<Book[]> | null>(null);
+export const useFetch = <T>(url: string): ApiResponse<T> => {
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -23,12 +18,12 @@ export const useFetch = (url: string): ApiResponse<Book[]> | null => {
       setError(null);
 
       try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`An error occurred: ${response.statusText}`);
+        const resp = await fetch(url);
+        if (!resp.ok) {
+          throw new Error(`An error occurred: ${resp.statusText}`);
         }
 
-        const jsonData: ApiResponse<Book[]> = await response.json();
+        const jsonData: T = await resp.json();
         setData(jsonData);
       } catch (error: any) {
         setError(error.message);
@@ -39,5 +34,5 @@ export const useFetch = (url: string): ApiResponse<Book[]> | null => {
     fetchData();
   }, [url]);
 
-  return { data, loading, error };
+  return { docs: null, data, loading, error };
 };
