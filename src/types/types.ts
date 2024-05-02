@@ -12,8 +12,15 @@ export type Book = {
   };
 };
 
-export type Action = { type: "ADD_BOOK"; payload: Book };
+export type Author = {
+  name: string;
+};
+
+export type Action =
+  | { type: "ADD_BOOK"; payload: Book }
+  | { type: "ADD_AUTHOR"; payload: Author };
 
 export type GlobalState = {
   readBooks: Book[];
+  favoriteAuthors: Author[];
 };

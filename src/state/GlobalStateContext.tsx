@@ -1,11 +1,15 @@
 import { createContext } from "react";
-import { Action, Book, GlobalState } from "../types/types";
+import { Action, GlobalState } from "../types/types";
 
-export const initalState = { readBooks: [] as Book[] };
+export const initialState: GlobalState = {
+  readBooks: [],
+  favoriteAuthors: [],
+};
+
 export const GlobalStateContext = createContext<{
   state: GlobalState;
   dispatch: React.Dispatch<Action>;
 }>({
-  state: initalState,
+  state: initialState,
   dispatch: () => null,
 });

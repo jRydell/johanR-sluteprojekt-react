@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { GlobalStateContext, initalState } from "../state/GlobalStateContext";
+import { GlobalStateContext, initialState } from "../state/GlobalStateContext";
 
 import reducer from "../state/reducer";
 
@@ -8,7 +8,7 @@ type GlobalStateProviderProps = {
 };
 
 export const GlobalStateProvider = ({ children }: GlobalStateProviderProps) => {
-  const [state, dispatch] = useReducer(reducer, initalState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <GlobalStateContext.Provider value={{ state, dispatch }}>
