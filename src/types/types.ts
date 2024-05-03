@@ -8,7 +8,7 @@ export type Book = {
   author_name: string[];
   first_publish_year: number;
   cover_i: string;
-  favorite: boolean;
+  isRead: boolean;
   pages: number;
   review: {
     comment: string;
@@ -22,6 +22,6 @@ export type Author = {
 };
 
 export type GlobalState = {
-  readBooks: Book[];
+  favoriteBooks: Book[];
   favoriteAuthors: Author[];
 };

@@ -8,8 +8,8 @@ function Root() {
         <nav>
           <NavLink to="/"> Home </NavLink>
           <NavLink to="/search"> Search </NavLink>
-          <NavLink to="/my-read-books"> My Read Books </NavLink>
-          <NavLink to="/my-favorite-authors"> My Favorite Authors </NavLink>
+          <NavLink to="/favorite-books"> Favorite Books </NavLink>
+          <NavLink to="/favorite-authors"> Favorite Authors </NavLink>
         </nav>
       </header>
 

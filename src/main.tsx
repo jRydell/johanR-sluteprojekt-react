@@ -6,9 +6,10 @@ import Root from "./routes/Root";
 import NotFound from "./routes/NotFound";
 import Book from "./routes/Book";
 import Search from "./routes/Search";
-import FavoriteAuthors from "./routes/MyFavoriteAuthors";
-import MyReadBooks from "./routes/MyReadBooks";
+import FavoriteAuthors from "./routes/FavoriteAuthors";
+import MyReadBooks from "./routes/FavoriteBooks";
 import { GlobalStateProvider } from "./Components/GlobalStateProvider";
+import Author from "./routes/Author";
 
 const router = createBrowserRouter([
   {
@@ -21,18 +22,24 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/my-read-books",
+        path: "/favorite-books",
         element: <MyReadBooks />,
         children: [
           {
-            path: "/my-read-books/:bookId",
+            path: "/favorite-books/:bookId",
             element: <Book />,
           },
         ],
       },
       {
-        path: "/my-favorite-authors",
+        path: "/favorite-authors",
         element: <FavoriteAuthors />,
+        children: [
+          {
+            path: "/favorite-authors/:authorId",
+            element: <Author />,
+          },
+        ],
       },
     ],
   },
