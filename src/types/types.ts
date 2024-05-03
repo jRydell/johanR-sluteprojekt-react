@@ -12,10 +12,6 @@ export type Book = {
   isRead: boolean;
   isFavorite: boolean;
   pages: number;
-  review: {
-    comment: string;
-    rating: number;
-  };
   description: string;
 };
 

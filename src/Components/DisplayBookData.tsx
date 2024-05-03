@@ -1,13 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
+import { Book } from "../types/types";
 import BookCard from "./BookCard";
-
-type Book = {
-  key: string;
-  title: string;
-  author_name: string[];
-  first_publish_year: number;
-  cover_i: string;
-};
 
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
