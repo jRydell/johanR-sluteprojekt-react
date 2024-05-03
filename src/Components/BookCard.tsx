@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import { Book } from "../types/types";
+import { GlobalStateContext } from "../state/GlobalStateContext";
 
 type BookCardProps = {
   book: Book;
 };
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
+  const { dispatch } = useContext(GlobalStateContext);
+
   return (
     <div className="border border-gray-300 rounded p-4">
       {book.cover_i ? (
@@ -21,6 +25,13 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
       <p className="text-sm text-gray-500">
         First Publish Year: {book.first_publish_year}
       </p>
+
+      <button
+        onClick={() => dispatch({ type: "ADD_BOOK", payload: book })}
+        className="mt-2"
+      >
+        Add to Favorites
+      </button>
     </div>
   );
 };

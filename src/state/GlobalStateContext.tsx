@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { Action, Book, Author, GlobalState } from "../types/types";
 
 export const initialState: GlobalState = {
-  readBooks: [] as Book[],
+  favoriteBooks: [] as Book[],
   favoriteAuthors: [] as Author[],
 };
 
