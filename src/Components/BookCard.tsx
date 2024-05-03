@@ -1,11 +1,7 @@
+import { Book } from "../types/types";
+
 type BookCardProps = {
-  book: {
-    key: string;
-    title: string;
-    author_name: string[];
-    first_publish_year: number;
-    cover_i: string;
-  };
+  book: Book;
 };
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
