@@ -5,7 +5,7 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
     case "ADD_BOOK":
       return {
         ...state,
-        readBooks: [...state.readBooks, action.payload],
+        favoriteBooks: [...state.favoriteBooks, action.payload],
       };
     case "ADD_AUTHOR":
       return {
