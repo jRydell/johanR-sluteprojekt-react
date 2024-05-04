@@ -4,10 +4,14 @@ import noCover from "../assets/noCover.svg";
 type BookCardProps = {
   book: Book;
   favoriteButton?: boolean;
-  readButton?: boolean;
+  deleteButton?: boolean;
 };
 
-const BookCard: React.FC<BookCardProps> = ({ book, favoriteButton = true }) => {
+const BookCard: React.FC<BookCardProps> = ({
+  book,
+  favoriteButton = true,
+  deleteButton = true,
+}) => {
   const { state, dispatch } = useGlobalState();
 
   const handleClick = () => {
@@ -39,6 +43,11 @@ const BookCard: React.FC<BookCardProps> = ({ book, favoriteButton = true }) => {
       {favoriteButton && (
         <button onClick={handleClick} className="mt-2">
           Add to Favorites
+        </button>
+      )}
+      {deleteButton && (
+        <button onClick={handleClick} className="mt-2">
+          Delete
         </button>
       )}
     </div>
