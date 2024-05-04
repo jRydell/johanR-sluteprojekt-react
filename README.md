@@ -1,6 +1,6 @@
 # 📚 Bookster: A Web Service for Book Enthusiasts
 
-Bookster is a web service targeting book enthusiasts, where users can search for books and retrieve information from Open Library. Bookster allows users to keep track of read books, mark favorite books/authors and create book reviews.
+Bookster is a web service for book enthusiasts, where users can search for books and retrieve information from Open Library API. Bookster allows users to mark and save favorite books/authors, keep track of read books and create book reviews.
 
 
 
@@ -11,7 +11,7 @@ Bookster is a web service targeting book enthusiasts, where users can search for
 - **React**: A JavaScript library for creating dynamic and interactive user interfaces.
 - **TypeScript**: A statically typed language that enhances JavaScript with additional safety and code quality features.
 - **Tailwind CSS**: A CSS framework for building responsive and customizable user interfaces with ease.
-- **Headless UI**: A component library focused on accessibility and customization, making it easy to create user-friendly interfaces without sacrificing performance.
+
 
 ## Getting Started
 
