@@ -9,9 +9,6 @@ export type Book = {
   author_name: string[];
   first_publish_year: number;
   cover_i: string;
-  isRead: boolean;
-  isFavorite: boolean;
-  pages: number;
   description: string;
 };
 

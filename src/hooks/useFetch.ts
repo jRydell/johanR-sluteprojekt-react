@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 type ApiResponse<T> = {
+  docs: T | null;
   data: T | null;
   loading: boolean;
   error: string | null;
@@ -33,5 +34,5 @@ export const useFetch = <T>(url: string): ApiResponse<T> => {
     fetchData();
   }, [url]);
 
-  return { data, loading, error };
+  return { docs: null, data, loading, error };
 };
