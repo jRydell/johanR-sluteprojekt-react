@@ -1,4 +1,4 @@
-# 📚 Bookster: A Web Service for Book Enthusiasts
+# 📚 Bookster: A Web application for Book Enthusiasts
 
 Bookster is a web service for book enthusiasts, where users can search for books and retrieve information from Open Library API. Bookster allows users to mark and save favorite books/authors, keep track of read books and create book reviews.
 
