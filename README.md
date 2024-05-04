@@ -5,7 +5,7 @@ Bookster is a web service for book enthusiasts, where users can search for books
 
 
 
-## Technologies and Frameworks
+## Technologies
 
 - **Vite**: A tool for building modern web projects quickly.
 - **React**: A JavaScript library for creating dynamic and interactive user interfaces.
