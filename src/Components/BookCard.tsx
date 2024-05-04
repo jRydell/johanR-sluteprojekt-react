@@ -1,6 +1,6 @@
 import { Book } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
-
+import noCover from "../assets/noCover.svg";
 type BookCardProps = {
   book: Book;
 };
@@ -22,7 +22,11 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           className="h-50 w-full object-cover rounded mb-4"
         />
       ) : (
-        <p>No cover available</p>
+        <img
+          src={noCover}
+          alt="No Book Cover Available"
+          className="h-50 w-full object-cover rounded mb-4"
+        />
       )}
       <h3 className="text-lg font-semibold">{book.title}</h3>
       <p className="text-sm text-gray-500 mb-2">Author: {book.author_name}</p>
