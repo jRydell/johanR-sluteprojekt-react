@@ -46,7 +46,10 @@ const BookCard: React.FC<BookCardProps> = ({
         </button>
       )}
       {deleteButton && (
-        <button onClick={handleClick} className="mt-2">
+        <button
+          onClick={() => dispatch({ type: "REMOVE_BOOK", payload: book })}
+          className="mt-2"
+        >
           Delete
         </button>
       )}
