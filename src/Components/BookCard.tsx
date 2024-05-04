@@ -3,9 +3,11 @@ import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 type BookCardProps = {
   book: Book;
+  favoriteButton?: boolean;
+  readButton?: boolean;
 };
 
-const BookCard: React.FC<BookCardProps> = ({ book }) => {
+const BookCard: React.FC<BookCardProps> = ({ book, favoriteButton = true }) => {
   const { state, dispatch } = useGlobalState();
 
   const handleClick = () => {
@@ -34,9 +36,11 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         First Publish Year: {book.first_publish_year}
       </p>
 
-      <button onClick={handleClick} className="mt-2">
-        Add to Favorites
-      </button>
+      {favoriteButton && (
+        <button onClick={handleClick} className="mt-2">
+          Add to Favorites
+        </button>
+      )}
     </div>
   );
 };
