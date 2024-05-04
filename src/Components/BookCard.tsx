@@ -12,12 +12,7 @@ const BookCard: React.FC<BookCardProps> = ({
   favoriteButton = true,
   deleteButton = true,
 }) => {
-  const { state, dispatch } = useGlobalState();
-
-  const handleClick = () => {
-    dispatch({ type: "ADD_BOOK", payload: book });
-    console.log(state.favoriteBooks);
-  };
+  const { dispatch } = useGlobalState();
 
   return (
     <div className="border border-gray-300 rounded p-4">
@@ -41,7 +36,10 @@ const BookCard: React.FC<BookCardProps> = ({
       </p>
 
       {favoriteButton && (
-        <button onClick={handleClick} className="mt-2">
+        <button
+          onClick={() => dispatch({ type: "ADD_BOOK", payload: book })}
+          className="mt-2"
+        >
           Add to Favorites
         </button>
       )}
