@@ -4,7 +4,7 @@ function Root() {
   return (
     <>
       <header>
-        <h1>Bookster</h1>
+        <h1>BOOKSTER, WORK IN PROGRESS SEE DEVELOP BRANCHES</h1>
         <nav>
           <NavLink to="/"> Home </NavLink>
           <NavLink to="/search"> Search </NavLink>
