@@ -18,6 +18,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
 
     const constructedUrl = `${url}${formattedInput}`;
     setSearchUrl(constructedUrl);
+    setInput("");
   };
 
   return (
