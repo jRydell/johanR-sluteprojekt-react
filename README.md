@@ -3,6 +3,9 @@
 Bookster is a web application for book enthusiasts, where users can search for books and retrieve information from Open Library API. Bookster allows users to mark and save favorite books/authors, keep track of read books and create book reviews.
 
 
+🚧🚧🚧THIS SITE IS UNDER CONSTRUCTION🚧🚧🚧
+
+
 
 
 ## Technologies
