@@ -7,7 +7,12 @@ type BookCardProps = {
 };
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  const { dispatch } = useContext(GlobalStateContext);
+  const { state, dispatch } = useContext(GlobalStateContext);
+
+  const handleClick = () => {
+    dispatch({ type: "ADD_BOOK", payload: book });
+    console.log(state.favoriteBooks);
+  };
 
   return (
     <div className="border border-gray-300 rounded p-4">
@@ -26,10 +31,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         First Publish Year: {book.first_publish_year}
       </p>
 
-      <button
-        onClick={() => dispatch({ type: "ADD_BOOK", payload: book })}
-        className="mt-2"
-      >
+      <button onClick={handleClick} className="mt-2">
         Add to Favorites
       </button>
     </div>
