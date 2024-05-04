@@ -1,13 +1,12 @@
-import { useContext } from "react";
 import { Book } from "../types/types";
-import { GlobalStateContext } from "../state/GlobalStateContext";
+import { useGlobalState } from "../hooks/useGlobalState";
 
 type BookCardProps = {
   book: Book;
 };
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  const { state, dispatch } = useContext(GlobalStateContext);
+  const { state, dispatch } = useGlobalState();
 
   const handleClick = () => {
     dispatch({ type: "ADD_BOOK", payload: book });
