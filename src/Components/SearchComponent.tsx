@@ -10,13 +10,13 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   url,
   placeholder,
 }) => {
-  const [query, setQuery] = useState("");
+  const [input, setInput] = useState("");
   const [searchUrl, setSearchUrl] = useState("");
 
   const handleSearch = () => {
-    const formattedQuery = query.replace(/ /g, "+");
+    const formattedInput = input.replace(/ /g, "+");
 
-    const constructedUrl = `${url}${formattedQuery}`;
+    const constructedUrl = `${url}${formattedInput}`;
     setSearchUrl(constructedUrl);
   };
 
@@ -24,8 +24,8 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
     <div>
       <input
         type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
         placeholder={placeholder}
       />
       <button onClick={handleSearch}>Search</button>

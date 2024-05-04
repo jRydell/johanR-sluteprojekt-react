@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 type ApiResponse<T> = {
-  docs: T | null;
   data: T | null;
   loading: boolean;
   error: string | null;
@@ -25,6 +24,7 @@ export const useFetch = <T>(url: string): ApiResponse<T> => {
 
         const jsonData: T = await response.json();
         setData(jsonData);
+        console.log(jsonData);
       } catch (error: any) {
         setError(error.message);
       } finally {
@@ -34,5 +34,5 @@ export const useFetch = <T>(url: string): ApiResponse<T> => {
     fetchData();
   }, [url]);
 
-  return { docs: null, data, loading, error };
+  return { data, loading, error };
 };
