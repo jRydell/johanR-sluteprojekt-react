@@ -16,7 +16,7 @@ function Root() {
         <h1 className="flex justify-center text-orange-500">Bookster</h1>
         <Navbar links={navLinks} />
       </header>
-      <main className="flex justify-center">
+      <main className="flex justify-center  m-20">
         <Outlet />
       </main>
     </>
