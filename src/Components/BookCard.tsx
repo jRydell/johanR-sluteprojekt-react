@@ -4,13 +4,15 @@ import noCover from "../assets/noCover.svg";
 type BookCardProps = {
   book: Book;
   searchPageButtons?: boolean;
-  deleteButton?: boolean;
+  deleteFavoriteButton?: boolean;
+  deleteReadButton?: boolean;
 };
 
 const BookCard: React.FC<BookCardProps> = ({
   book,
   searchPageButtons = true,
-  deleteButton = true,
+  deleteFavoriteButton = true,
+  deleteReadButton = true,
 }) => {
   const { dispatch } = useGlobalState();
 
@@ -41,25 +43,33 @@ const BookCard: React.FC<BookCardProps> = ({
             onClick={() =>
               dispatch({ type: "ADD_FAVORITE_BOOK", payload: book })
             }
-            className="mt-2"
+            className=""
           >
             Add to Favorites
           </button>
           <button
             onClick={() => dispatch({ type: "ADD_READ_BOOK", payload: book })}
-            className="mt-2"
+            className=""
           >
             Mark as Read
           </button>
         </section>
       )}
 
-      {deleteButton && (
+      {deleteFavoriteButton && (
         <button
           onClick={() =>
             dispatch({ type: "REMOVE_FAVORITE_BOOK", payload: book })
           }
-          className="mt-2"
+          className=""
+        >
+          Delete
+        </button>
+      )}
+      {deleteReadButton && (
+        <button
+          onClick={() => dispatch({ type: "REMOVE_READ_BOOK", payload: book })}
+          className=""
         >
           Delete
         </button>

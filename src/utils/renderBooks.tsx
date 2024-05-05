@@ -4,7 +4,8 @@ import { Book } from "../types/types";
 export const renderBooks = (
   books: Book[],
   searchPageButtons: boolean,
-  deleteButton: boolean
+  deleteFavoriteButton: boolean,
+  deleteReadButton: boolean
 ) => {
   if (books.length) {
     return books.map((book) => (
@@ -12,7 +13,8 @@ export const renderBooks = (
         <BookCard
           book={book}
           searchPageButtons={searchPageButtons}
-          deleteButton={deleteButton}
+          deleteFavoriteButton={deleteFavoriteButton}
+          deleteReadButton={deleteReadButton}
         />
       </li>
     ));

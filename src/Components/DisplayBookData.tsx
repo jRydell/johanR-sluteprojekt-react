@@ -11,7 +11,12 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {data.docs.map((book: Book) => (
-        <BookCard key={book.key} book={book} deleteButton={false} />
+        <BookCard
+          key={book.key}
+          book={book}
+          deleteFavoriteButton={false}
+          deleteReadButton={false}
+        />
       ))}
     </div>
   );
