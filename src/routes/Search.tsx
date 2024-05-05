@@ -3,12 +3,14 @@ import SearchComponent from "../Components/SearchComponent";
 const Search = () => {
   return (
     <>
-      <div>Find books</div>
+      <section className="">
+        <h2>Find books</h2>
 
-      <SearchComponent
-        placeholder={"Enter a book"}
-        url={"https://openlibrary.org/search.json?q="}
-      />
+        <SearchComponent
+          placeholder={"Enter a book"}
+          url={"https://openlibrary.org/search.json?q="}
+        />
+      </section>
     </>
   );
 };

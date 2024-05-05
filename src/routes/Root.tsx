@@ -4,13 +4,48 @@ function Root() {
   return (
     <>
       <header>
-        <h1 className="text-orange-500">Bookster</h1>
-        <nav>
-          <NavLink to="/"> Home </NavLink>
-          <NavLink to="/search"> Search </NavLink>
-          <NavLink to="/favorite-books"> Favorite Books </NavLink>
-          <NavLink to="/read-books"> Read Books </NavLink>
-          <NavLink to="/favorite-authors"> Favorite Authors </NavLink>
+        <h1 className="flex justify-center text-orange-500">Bookster</h1>
+        <nav className="justify-center flex gap-4">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "font-bold text-blue-500" : "text-black"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/search"
+            className={({ isActive }) =>
+              isActive ? "font-bold text-blue-500" : "text-black"
+            }
+          >
+            Search
+          </NavLink>
+          <NavLink
+            to="/favorite-books"
+            className={({ isActive }) =>
+              isActive ? "font-bold text-blue-500" : "text-black"
+            }
+          >
+            Favorite Books
+          </NavLink>
+          <NavLink
+            to="/read-books"
+            className={({ isActive }) =>
+              isActive ? "font-bold text-blue-500" : "text-black"
+            }
+          >
+            Read Books
+          </NavLink>
+          <NavLink
+            to="/favorite-authors"
+            className={({ isActive }) =>
+              isActive ? "font-bold text-blue-500" : "text-black"
+            }
+          >
+            Favorite Authors
+          </NavLink>
         </nav>
       </header>
 
