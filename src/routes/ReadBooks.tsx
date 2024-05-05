@@ -9,7 +9,7 @@ const ReadBooks = () => {
       <section>
         <h2 className="">Read Books:</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {renderBooks(state.readBooks, false, false, true)}
+          {renderBooks(state.readBooks, false, true, false)}
         </ul>
       </section>
     </>

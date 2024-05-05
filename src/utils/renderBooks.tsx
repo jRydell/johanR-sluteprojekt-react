@@ -3,9 +3,9 @@ import { Book } from "../types/types";
 
 export const renderBooks = (
   books: Book[],
-  searchPageButtons: boolean,
   deleteFavoriteButton: boolean,
-  deleteReadButton: boolean
+  deleteReadButton: boolean,
+  searchPageButtons?: boolean
 ) => {
   if (books.length) {
     return books.map((book) => (

@@ -9,7 +9,7 @@ const FavoriteBooks = () => {
       <section>
         <h2 className="">Favorite Books:</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {renderBooks(state.favoriteBooks, false, true, false)}
+          {renderBooks(state.favoriteBooks, true, false, false)}
         </ul>
       </section>
     </>

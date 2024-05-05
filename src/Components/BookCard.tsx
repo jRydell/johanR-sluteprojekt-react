@@ -4,8 +4,8 @@ import noCover from "../assets/noCover.svg";
 type BookCardProps = {
   book: Book;
   searchPageButtons?: boolean;
-  deleteFavoriteButton?: boolean;
-  deleteReadButton?: boolean;
+  deleteFavoriteButton: boolean;
+  deleteReadButton: boolean;
 };
 
 const BookCard: React.FC<BookCardProps> = ({
