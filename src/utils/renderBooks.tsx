@@ -1,7 +1,7 @@
 import BookCard from "../Components/BookCard";
 import { Book } from "../types/types";
 
-export const renderBookList = (books: Book[], searchPageButtons = false) => {
+export const renderBooks = (books: Book[], searchPageButtons: boolean) => {
   if (books.length) {
     return books.map((book) => (
       <li key={book.key}>

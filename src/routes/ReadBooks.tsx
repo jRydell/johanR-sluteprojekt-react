@@ -1,5 +1,5 @@
 import { useGlobalState } from "../hooks/useGlobalState";
-import { renderBookList } from "../utils/renderBooks";
+import { renderBooks } from "../utils/renderBooks";
 
 const ReadBooks = () => {
   const { state } = useGlobalState();
@@ -9,7 +9,7 @@ const ReadBooks = () => {
       <section>
         <h2 className="">Read Books:</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {renderBookList(state.readBooks, false)}
+          {renderBooks(state.readBooks, false)}
         </ul>
       </section>
     </>

@@ -1,6 +1,8 @@
 export type Action =
-  | { type: "ADD_BOOK"; payload: Book }
-  | { type: "REMOVE_BOOK"; payload: Book }
+  | { type: "ADD_FAVORITE_BOOK"; payload: Book }
+  | { type: "REMOVE_FAVORITE_BOOK"; payload: Book }
+  | { type: "ADD_READ_BOOK"; payload: Book }
+  | { type: "REMOVE_READ_BOOK"; payload: Book }
   | { type: "ADD_AUTHOR"; payload: Author };
 
 export type Book = {

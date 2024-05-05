@@ -38,7 +38,9 @@ const BookCard: React.FC<BookCardProps> = ({
       {searchPageButtons && (
         <section>
           <button
-            onClick={() => dispatch({ type: "ADD_BOOK", payload: book })}
+            onClick={() =>
+              dispatch({ type: "ADD_FAVORITE_BOOK", payload: book })
+            }
             className="mt-2"
           >
             Add to Favorites
@@ -54,7 +56,9 @@ const BookCard: React.FC<BookCardProps> = ({
 
       {deleteButton && (
         <button
-          onClick={() => dispatch({ type: "REMOVE_BOOK", payload: book })}
+          onClick={() =>
+            dispatch({ type: "REMOVE_FAVORITE_BOOK", payload: book })
+          }
           className="mt-2"
         >
           Delete
