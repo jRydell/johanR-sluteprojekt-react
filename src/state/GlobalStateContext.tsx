@@ -5,6 +5,7 @@ export const initialState: GlobalState = {
   favoriteBooks: [] as Book[],
   favoriteAuthors: [] as Author[],
   readBooks: [] as Book[],
+  searchResults: [] as Book[] | Author[],
 };
 
 export const GlobalStateContext = createContext<{
