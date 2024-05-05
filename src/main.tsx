@@ -1,15 +1,14 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import NotFound from "./routes/NotFound";
-import Book from "./routes/Book";
 import Search from "./routes/Search";
-import FavoriteAuthors from "./routes/FavoriteAuthors";
-import MyReadBooks from "./routes/FavoriteBooks";
 import { GlobalStateProvider } from "./Components/GlobalStateProvider";
-import Author from "./routes/Author";
+import FavoriteBooks from "./routes/FavoriteBooks";
+import ReadBooks from "./routes/ReadBooks";
+import FavoriteAuthors from "./routes/FavoriteAuthors";
+import React from "react";
 
 const router = createBrowserRouter([
   {
@@ -23,23 +22,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorite-books",
-        element: <MyReadBooks />,
-        children: [
-          {
-            path: "/favorite-books/:bookId",
-            element: <Book />,
-          },
-        ],
+        element: <FavoriteBooks />,
+      },
+      {
+        path: "/read-books",
+        element: <ReadBooks />,
       },
       {
         path: "/favorite-authors",
         element: <FavoriteAuthors />,
-        children: [
-          {
-            path: "/favorite-authors/:authorId",
-            element: <Author />,
-          },
-        ],
       },
     ],
   },
