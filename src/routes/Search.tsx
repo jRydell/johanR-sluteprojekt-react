@@ -5,7 +5,6 @@ const Search = () => {
     <>
       <section className="">
         <h2>Find books</h2>
-
         <SearchComponent
           placeholder={"Enter a book"}
           url={"https://openlibrary.org/search.json?q="}
