@@ -4,6 +4,7 @@ import { Action, Book, Author, GlobalState } from "../types/types";
 export const initialState: GlobalState = {
   favoriteBooks: [] as Book[],
   favoriteAuthors: [] as Author[],
+  readBooks: [] as Book[],
 };
 
 export const GlobalStateContext = createContext<{

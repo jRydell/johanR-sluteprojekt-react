@@ -20,4 +20,5 @@ export type Author = {
 export type GlobalState = {
   favoriteBooks: Book[];
   favoriteAuthors: Author[];
+  readBooks: Book[];
 };
