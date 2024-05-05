@@ -3,13 +3,13 @@ import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 type BookCardProps = {
   book: Book;
-  favoriteButton?: boolean;
+  searchPageButtons?: boolean;
   deleteButton?: boolean;
 };
 
 const BookCard: React.FC<BookCardProps> = ({
   book,
-  favoriteButton = true,
+  searchPageButtons = true,
   deleteButton = true,
 }) => {
   const { dispatch } = useGlobalState();
@@ -35,14 +35,23 @@ const BookCard: React.FC<BookCardProps> = ({
         First Publish Year: {book.first_publish_year}
       </p>
 
-      {favoriteButton && (
-        <button
-          onClick={() => dispatch({ type: "ADD_BOOK", payload: book })}
-          className="mt-2"
-        >
-          Add to Favorites
-        </button>
+      {searchPageButtons && (
+        <section>
+          <button
+            onClick={() => dispatch({ type: "ADD_BOOK", payload: book })}
+            className="mt-2"
+          >
+            Add to Favorites
+          </button>
+          <button
+            onClick={() => dispatch({ type: "ADD_READ_BOOK", payload: book })}
+            className="mt-2"
+          >
+            Mark as Read
+          </button>
+        </section>
       )}
+
       {deleteButton && (
         <button
           onClick={() => dispatch({ type: "REMOVE_BOOK", payload: book })}
