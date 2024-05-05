@@ -1,55 +1,22 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 function Root() {
+  const navLinks = [
+    { to: "/", text: "Home" },
+    { to: "/search", text: "Search" },
+    { to: "/favorite-books", text: "Favorite Books" },
+    { to: "/read-books", text: "Read Books" },
+    { to: "/favorite-authors", text: "Favorite Authors" },
+  ];
+
   return (
     <>
       <header>
         <h1 className="flex justify-center text-orange-500">Bookster</h1>
-        <nav className="justify-center flex gap-4">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "font-bold text-blue-500" : "text-black"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/search"
-            className={({ isActive }) =>
-              isActive ? "font-bold text-blue-500" : "text-black"
-            }
-          >
-            Search
-          </NavLink>
-          <NavLink
-            to="/favorite-books"
-            className={({ isActive }) =>
-              isActive ? "font-bold text-blue-500" : "text-black"
-            }
-          >
-            Favorite Books
-          </NavLink>
-          <NavLink
-            to="/read-books"
-            className={({ isActive }) =>
-              isActive ? "font-bold text-blue-500" : "text-black"
-            }
-          >
-            Read Books
-          </NavLink>
-          <NavLink
-            to="/favorite-authors"
-            className={({ isActive }) =>
-              isActive ? "font-bold text-blue-500" : "text-black"
-            }
-          >
-            Favorite Authors
-          </NavLink>
-        </nav>
+        <Navbar links={navLinks} />
       </header>
-
-      <main>
+      <main className="flex justify-center">
         <Outlet />
       </main>
     </>
