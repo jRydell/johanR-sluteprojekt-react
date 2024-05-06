@@ -20,11 +20,8 @@ export type Author = {
   name: string;
 };
 
-export type SearchResults = Book[] | Author[];
-
 export type GlobalState = {
   favoriteBooks: Book[];
   favoriteAuthors: Author[];
   readBooks: Book[];
-  searchResults: SearchResults;
 };
