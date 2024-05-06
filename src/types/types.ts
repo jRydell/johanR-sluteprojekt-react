@@ -18,7 +18,7 @@ export type Book = {
 export type Author = {
   key: string;
   author_name: string;
-  kuk_string: string;
+  subject: string[];
 };
 
 export type GlobalState = {

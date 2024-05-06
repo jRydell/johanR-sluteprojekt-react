@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DisplayBookData from "./DisplayBookData";
+import DisplayAuthorData from "./DisplayAuthorData";
 
 type SearchComponentProps = {
   url: string;
@@ -30,7 +30,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
         placeholder={placeholder}
       />
       <button onClick={handleSearch}>Search</button>
-      {searchUrl && <DisplayBookData url={searchUrl} />}
+      {searchUrl && <DisplayAuthorData url={searchUrl} />}
     </div>
   );
 };
