@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DisplayAuthorData from "./DisplayAuthorData";
+import DisplayBookData from "./DisplayBookData";
 
 type SearchComponentProps = {
   url: string;
@@ -22,7 +23,8 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   };
 
   return (
-    <div>
+    <section>
+      <h2>Search for a book</h2>
       <input
         type="text"
         value={input}
@@ -30,8 +32,9 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
         placeholder={placeholder}
       />
       <button onClick={handleSearch}>Search</button>
-      {searchUrl && <DisplayAuthorData url={searchUrl} />}
-    </div>
+      {/* {searchUrl && <DisplayAuthorData url={searchUrl} />} */}
+      {searchUrl && <DisplayBookData url={searchUrl} />}
+    </section>
   );
 };
 

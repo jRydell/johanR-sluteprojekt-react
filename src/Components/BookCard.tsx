@@ -42,25 +42,25 @@ const BookCard: React.FC<BookCardProps> = ({
         <section className="flex gap-4">
           <button
             onClick={() => {
-              dispatch({ type: "TOGGLE_FAVORITE_BOOK", payload: book });
+              dispatch({ type: "ADD_FAVORITE_BOOK", payload: book });
               setIsFavorite(!isFavorite);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
             }`}
           >
-            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+            {isFavorite ? "Added to Favorites" : "Add to Favorites"}
           </button>
           <button
             onClick={() => {
-              dispatch({ type: "TOGGLE_READ_BOOK", payload: book });
+              dispatch({ type: "ADD_READ_BOOK", payload: book });
               setIsRead(!isRead);
             }}
             className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isRead ? "active:bg-yellow-500 active:hover:bg-yellow-700" : ""
             }`}
           >
-            {isRead ? "Mark as Unread" : "Mark as Read"}
+            {isRead ? "Mark as Unread" : "Marked as Read"}
           </button>
         </section>
       )}
@@ -68,7 +68,7 @@ const BookCard: React.FC<BookCardProps> = ({
         {deleteFavoriteButton && (
           <button
             onClick={() =>
-              dispatch({ type: "REMOVE_FAVORITE_BOOK", payload: book })
+              dispatch({ type: "REMOVE_FAVORITE_BOOK", payload: book.key })
             }
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700 "
           >
@@ -78,7 +78,7 @@ const BookCard: React.FC<BookCardProps> = ({
         {deleteReadButton && (
           <button
             onClick={() =>
-              dispatch({ type: "REMOVE_READ_BOOK", payload: book })
+              dispatch({ type: "REMOVE_READ_BOOK", payload: book.key })
             }
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
           >

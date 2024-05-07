@@ -11,7 +11,7 @@ const Search = () => {
   return (
     <>
       <section className="">
-        <h2>Find Author</h2>
+        <h2>Search</h2>
         <SearchComponent placeholder={url.title} url={url.books} />
       </section>
     </>
