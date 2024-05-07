@@ -43,7 +43,7 @@ const BookCard: React.FC<BookCardProps> = ({
           <button
             onClick={() => {
               dispatch({ type: "ADD_FAVORITE_BOOK", payload: book });
-              setIsFavorite(!isFavorite);
+              setIsFavorite(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
@@ -54,13 +54,13 @@ const BookCard: React.FC<BookCardProps> = ({
           <button
             onClick={() => {
               dispatch({ type: "ADD_READ_BOOK", payload: book });
-              setIsRead(!isRead);
+              setIsRead(true);
             }}
             className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isRead ? "active:bg-yellow-500 active:hover:bg-yellow-700" : ""
             }`}
           >
-            {isRead ? "Mark as Unread" : "Marked as Read"}
+            {isRead ? "Marked as read" : "Mark as Read"}
           </button>
         </section>
       )}
