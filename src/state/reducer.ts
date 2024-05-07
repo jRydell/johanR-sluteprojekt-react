@@ -3,16 +3,32 @@ import { Action, GlobalState } from "../types/types";
 const reducer = (state: GlobalState, action: Action): GlobalState => {
   switch (action.type) {
     case "ADD_FAVORITE_BOOK":
-      return {
-        ...state,
-        favoriteBooks: [...state.favoriteBooks, action.payload],
-      };
+      const favoriteBookExists = state.favoriteBooks.some(
+        (book) => book.key === action.payload.key
+      );
+      if (favoriteBookExists) {
+        alert(`${action.payload.title} is already a favorite book.`);
+        return state;
+      } else {
+        return {
+          ...state,
+          favoriteBooks: [...state.favoriteBooks, action.payload],
+        };
+      }
 
     case "ADD_READ_BOOK":
-      return {
-        ...state,
-        readBooks: [...state.readBooks, action.payload],
-      };
+      const readBookExists = state.readBooks.some(
+        (book) => book.key === action.payload.key
+      );
+      if (readBookExists) {
+        alert(`${action.payload.title} is already a read book.`);
+        return state;
+      } else {
+        return {
+          ...state,
+          readBooks: [...state.readBooks, action.payload],
+        };
+      }
 
     case "REMOVE_FAVORITE_BOOK":
       return {
