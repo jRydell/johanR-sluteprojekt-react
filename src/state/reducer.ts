@@ -37,6 +37,14 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
         favoriteAuthors: [...state.favoriteAuthors, action.payload],
       };
 
+    case "REMOVE_AUTHOR":
+      return {
+        ...state,
+        favoriteAuthors: state.favoriteAuthors.filter(
+          (author) => author.key !== action.payload
+        ),
+      };
+
     default:
       return state;
   }
