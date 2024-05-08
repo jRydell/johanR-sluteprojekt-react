@@ -1,19 +1,13 @@
-import { Book } from "../types/types";
+import { BookCardProps } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
 
-type BookCardProps = {
-  book: Book;
-  searchPageButtons?: boolean;
-  deleteFavoriteButton: boolean;
-  deleteReadButton: boolean;
-};
 const BookCard: React.FC<BookCardProps> = ({
   book,
-  searchPageButtons = true,
-  deleteFavoriteButton = true,
-  deleteReadButton = true,
+  searchPageButtons,
+  removeFavoriteButton,
+  removeReadButton,
 }) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -65,24 +59,24 @@ const BookCard: React.FC<BookCardProps> = ({
         </section>
       )}
       <div className="flex justify-center">
-        {deleteFavoriteButton && (
+        {removeFavoriteButton && (
           <button
             onClick={() =>
               dispatch({ type: "REMOVE_FAVORITE_BOOK", payload: book.key })
             }
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700 "
           >
-            Delete
+            Remove
           </button>
         )}
-        {deleteReadButton && (
+        {removeReadButton && (
           <button
             onClick={() =>
               dispatch({ type: "REMOVE_READ_BOOK", payload: book.key })
             }
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
           >
-            Delete
+            Remove
           </button>
         )}
       </div>

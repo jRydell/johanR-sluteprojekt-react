@@ -29,3 +29,10 @@ export type GlobalState = {
   favoriteAuthors: Author[];
   readBooks: Book[];
 };
+
+export type BookCardProps = {
+  book: Book;
+  searchPageButtons?: boolean;
+  removeFavoriteButton: boolean;
+  removeReadButton: boolean;
+};

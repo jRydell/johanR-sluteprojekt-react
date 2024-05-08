@@ -1,6 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 import { Book } from "../types/types";
-import { renderBooks } from "../utils/renderBooks";
+import { renderBooks } from "../utils/renderItems";
 
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);

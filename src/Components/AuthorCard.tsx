@@ -3,14 +3,14 @@ import { useGlobalState } from "../hooks/useGlobalState";
 
 type AuthorCardProps = {
   author: Author;
-  addFavoriteButton?: boolean;
-  removeFavoriteButton?: boolean;
+  addFavoriteButton: boolean;
+  removeFavoriteButton: boolean;
 };
 
 const AuthorCard = ({
   author,
-  addFavoriteButton = true,
-  removeFavoriteButton = true,
+  addFavoriteButton,
+  removeFavoriteButton,
 }: AuthorCardProps) => {
   const { dispatch } = useGlobalState();
 
@@ -27,9 +27,7 @@ const AuthorCard = ({
         <p className="text-sm text-gray-500 mb-2">
           Date of birth: {author.birth_date}
         </p>
-        <p className="text-sm text-gray-500 mb-2">
-          Date of death: {author.death_date}
-        </p>
+
         <p className="text-sm text-gray-500 mb-2">
           Top work: {author.top_work}
         </p>
