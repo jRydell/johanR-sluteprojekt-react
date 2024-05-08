@@ -11,7 +11,6 @@ const Search = () => {
   return (
     <>
       <section className="">
-        <h2>Search</h2>
         <SearchComponent placeholder={url.author} url={url.authors} />
       </section>
     </>

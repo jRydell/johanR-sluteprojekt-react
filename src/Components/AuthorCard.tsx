@@ -1,5 +1,6 @@
 import { Author } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
+import { useState } from "react";
 
 type AuthorCardProps = {
   author: Author;
@@ -13,6 +14,7 @@ const AuthorCard = ({
   removeFavoriteButton,
 }: AuthorCardProps) => {
   const { dispatch } = useGlobalState();
+  const [isFavorite, setIsFavorite] = useState(false);
 
   return (
     <>
@@ -33,16 +35,24 @@ const AuthorCard = ({
         </p>
         {addFavoriteButton && (
           <button
-            onClick={() => dispatch({ type: "ADD_AUTHOR", payload: author })}
+            onClick={() => {
+              dispatch({ type: "ADD_AUTHOR", payload: author });
+              setIsFavorite(true);
+            }}
+            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
+              isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
+            }`}
           >
-            Add to favorites
+            {isFavorite ? "Added to Favorites" : "Add to Favorites"}
           </button>
         )}
+
         {removeFavoriteButton && (
           <button
             onClick={() =>
               dispatch({ type: "REMOVE_AUTHOR", payload: author.key })
             }
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
           >
             Remove
           </button>

@@ -14,7 +14,7 @@ const Navbar = ({ links }: { links: Link[] }) => {
             key={index}
             to={link.to}
             className={({ isActive }) =>
-              isActive ? "font-bold text-blue-500" : "text-black"
+              isActive ? "font-bold text-blue-500" : "hover:text-blue-500"
             }
           >
             {link.text}

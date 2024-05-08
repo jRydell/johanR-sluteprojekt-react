@@ -50,8 +50,8 @@ const BookCard: React.FC<BookCardProps> = ({
               dispatch({ type: "ADD_READ_BOOK", payload: book });
               setIsRead(true);
             }}
-            className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
-              isRead ? "active:bg-yellow-500 active:hover:bg-yellow-700" : ""
+            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
+              isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
             }`}
           >
             {isRead ? "Marked as read" : "Mark as Read"}
