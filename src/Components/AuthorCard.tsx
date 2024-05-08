@@ -17,8 +17,16 @@ const AuthorCard = ({
   return (
     <>
       <section>
-        <h3 className="text-lg font-semibold">{author.author_name}</h3>
-        <p className="text-sm text-gray-500 mb-2">Subject: {author.subject}</p>
+        <h3 className="text-lg font-semibold">{author.name}</h3>
+        <p className="text-sm text-gray-500 mb-2">
+          Date of birth: {author.birth_date}
+        </p>
+        <p className="text-sm text-gray-500 mb-2">
+          Date of death: {author.death_date}
+        </p>
+        <p className="text-sm text-gray-500 mb-2">
+          Top work: {author.top_work}
+        </p>
         {addFavoriteButton && (
           <button
             onClick={() => dispatch({ type: "ADD_AUTHOR", payload: author })}
