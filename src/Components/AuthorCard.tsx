@@ -40,7 +40,7 @@ const AuthorCard = ({
               setIsFavorite(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
-              isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
+              isFavorite ? "active:bg-orange-500" : ""
             }`}
           >
             {isFavorite ? "Added to Favorites" : "Add to Favorites"}
@@ -52,7 +52,7 @@ const AuthorCard = ({
             onClick={() =>
               dispatch({ type: "REMOVE_AUTHOR", payload: author.key })
             }
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-orange-500"
           >
             Remove
           </button>

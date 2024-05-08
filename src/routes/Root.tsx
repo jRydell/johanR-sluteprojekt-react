@@ -12,8 +12,10 @@ function Root() {
 
   return (
     <>
-      <header>
-        <h1 className="flex justify-center text-orange-500">Bookster</h1>
+      <header className="mt-5 ">
+        <h1 className="flex justify-center text-orange-500 mb-5 text-3xl">
+          Bookster
+        </h1>
         <Navbar links={navLinks} />
       </header>
       <main className="flex justify-center  m-20">

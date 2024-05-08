@@ -32,7 +32,8 @@ export type GlobalState = {
 
 export type BookCardProps = {
   book: Book;
-  searchPageButtons?: boolean;
+  searchPageButtons: boolean;
   removeFavoriteButton: boolean;
   removeReadButton: boolean;
+  reviewButton: boolean;
 };

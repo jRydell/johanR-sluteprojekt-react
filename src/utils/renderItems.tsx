@@ -6,7 +6,8 @@ export const renderBooks = (
   books: Book[],
   removeFavoriteButton: boolean,
   removeReadButton: boolean,
-  searchPageButtons: boolean
+  searchPageButtons: boolean,
+  reviewButton: boolean
 ) => {
   if (books.length) {
     return books.map((book) => (
@@ -16,6 +17,7 @@ export const renderBooks = (
           searchPageButtons={searchPageButtons}
           removeFavoriteButton={removeFavoriteButton}
           removeReadButton={removeReadButton}
+          reviewButton={reviewButton}
         />
       </li>
     ));
