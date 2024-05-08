@@ -1,5 +1,5 @@
-import BookCard from "../Components/BookCard";
-import AuthorCard from "../Components/AuthorCard";
+import BookCard from "../components/BookCard";
+import AuthorCard from "../components/AuthorCard";
 import { Author, Book } from "../types/types";
 
 export const renderBooks = (

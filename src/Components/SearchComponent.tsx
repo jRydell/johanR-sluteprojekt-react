@@ -1,6 +1,6 @@
 import { useState } from "react";
-//import DisplayAuthorData from "./DisplayAuthorData";
 import DisplayBookData from "./DisplayBookData";
+//import DisplayAuthorData from "./DisplayAuthorData";
 
 type SearchComponentProps = {
   url: string;

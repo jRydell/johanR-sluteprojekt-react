@@ -2,12 +2,14 @@ import { BookCardProps } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const BookCard: React.FC<BookCardProps> = ({
   book,
   searchPageButtons,
   removeFavoriteButton,
   removeReadButton,
+  reviewButton,
 }) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -79,7 +81,11 @@ const BookCard: React.FC<BookCardProps> = ({
             Remove
           </button>
         )}
-        reviewButton && (<button>Review</button>)
+        {reviewButton && (
+          <Link to={`/read-books/review${book.key}`} className="text-blue-500">
+            Review
+          </Link>
+        )}
       </div>
     </section>
   );

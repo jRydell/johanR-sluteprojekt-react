@@ -13,6 +13,9 @@ export type Book = {
   first_publish_year: number;
   cover_i: string;
   description: string;
+  userRating: string;
+  userReview: string;
+  userNumPages: string;
 };
 
 export type Author = {
