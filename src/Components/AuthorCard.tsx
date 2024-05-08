@@ -17,6 +17,12 @@ const AuthorCard = ({
   return (
     <>
       <section>
+        <img
+          src={`https://covers.openlibrary.org/a/olid/${author.key}-M.jpg`}
+          alt="Author Photo"
+          className="h-50 w-full object-cover rounded mb-4"
+        />
+
         <h3 className="text-lg font-semibold">{author.name}</h3>
         <p className="text-sm text-gray-500 mb-2">
           Date of birth: {author.birth_date}
