@@ -9,7 +9,7 @@ import FavoriteBooks from "./routes/FavoriteBooks";
 import ReadBooks from "./routes/ReadBooks";
 import FavoriteAuthors from "./routes/FavoriteAuthors";
 import React from "react";
-import { GlobalStateProvider } from "./components/GlobalStateProvider";
+import { GlobalStateProvider } from "./Components/GlobalStateProvider";
 
 const router = createBrowserRouter([
   {
