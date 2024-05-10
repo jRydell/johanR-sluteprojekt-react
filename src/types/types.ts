@@ -8,7 +8,7 @@ export type Action =
   | {
       type: "ADD_BOOK_REVIEW";
       payload: {
-        bookKey: string;
+        bookID: string;
         userReview: string;
         userRating: string;
         userNumPages: string;

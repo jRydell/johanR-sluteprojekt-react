@@ -64,7 +64,7 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
       return {
         ...state,
         readBooks: state.readBooks.map((book) =>
-          book.key === action.payload.bookKey
+          book.key === action.payload.bookID
             ? {
                 ...book,
                 userRating: action.payload.userRating,

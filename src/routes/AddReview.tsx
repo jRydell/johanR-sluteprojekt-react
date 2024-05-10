@@ -1,54 +1,47 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { GlobalStateContext } from "../state/GlobalStateContext";
 
 const AddBookReview = () => {
-  const { bookKey = "" } = useParams<{ bookKey: string }>();
+  const { bookID = "" } = useParams<{ bookID: string }>();
   const { dispatch } = useContext(GlobalStateContext);
   const navigate = useNavigate();
 
-  const [review, setReview] = useState<{
-    bookKey: string;
-    userReview: string;
-    userRating: string;
-    userNumPages: string;
-  }>({
-    bookKey: "",
+  // Separate state for form inputs
+  const [review, setReview] = useState({
     userReview: "",
     userRating: "",
     userNumPages: "",
   });
 
-  useEffect(() => {
-    // Set the bookKey in the review object
-    setReview({ ...review, bookKey: bookKey });
-  }, [bookKey]);
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    // Update form state based on input changes
     setReview({ ...review, [name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Create the updated book object
-    const updatedBook = {
-      bookKey: review.bookKey,
+    // Create the object to be dispatched
+    const newReview = {
+      bookID: bookID,
       userReview: review.userReview,
       userRating: review.userRating,
       userNumPages: review.userNumPages,
     };
 
-    // Dispatch action to add book review
+    // Log the new object
+    console.log("New Review Object:", newReview);
+
+    // Dispatch action to add book review with updated review details
     dispatch({
       type: "ADD_BOOK_REVIEW",
-      payload: updatedBook,
+      payload: newReview,
     });
 
-    // Redirect to the book review page
     navigate("/read-books");
   };
 
