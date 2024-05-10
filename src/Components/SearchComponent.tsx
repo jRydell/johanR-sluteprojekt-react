@@ -1,6 +1,5 @@
 import { useState } from "react";
 import DisplayBookData from "./DisplayBookData";
-//import DisplayAuthorData from "./DisplayAuthorData";
 
 type SearchComponentProps = {
   url: string;
@@ -24,7 +23,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
 
   return (
     <section>
-      <h2>Search for a book</h2>
+      <h2>Search</h2>
       <input
         type="text"
         value={input}

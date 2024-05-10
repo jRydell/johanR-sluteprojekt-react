@@ -4,12 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import NotFound from "./routes/NotFound";
 import Search from "./routes/Search";
-import { GlobalStateProvider } from "./components/GlobalStateProvider";
+
 import FavoriteBooks from "./routes/FavoriteBooks";
 import ReadBooks from "./routes/ReadBooks";
 import FavoriteAuthors from "./routes/FavoriteAuthors";
 import React from "react";
 import AddReview from "./routes/AddReview";
+import { GlobalStateProvider } from "./Components/GlobalStateProvider";
 
 const router = createBrowserRouter([
   {
