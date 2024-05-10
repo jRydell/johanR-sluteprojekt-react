@@ -1,4 +1,4 @@
-import SearchComponent from "../components/SearchComponent";
+import SearchComponent from "../Components/SearchComponent";
 
 const Search = () => {
   const url = {
