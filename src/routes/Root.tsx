@@ -1,18 +1,22 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function Root() {
+  const navLinks = [
+    { to: "/", text: "Home" },
+    { to: "/search", text: "Search" },
+    { to: "/favorite-books", text: "Favorite Books" },
+    { to: "/read-books", text: "Read Books" },
+    { to: "/favorite-authors", text: "Favorite Authors" },
+  ];
+
   return (
     <>
       <header>
-        <h1>BOOKSTER, WORK IN PROGRESS SEE DEVELOP BRANCHES</h1>
-        <nav>
-          <NavLink to="/"> Home </NavLink>
-          <NavLink to="/search"> Search </NavLink>
-          <NavLink to="/library"> Library </NavLink>
-          <NavLink to="/favorite-authors"> Favorite Authors </NavLink>
-        </nav>
+        <h1 className="flex justify-center text-orange-500">Bookster</h1>
+        <Navbar links={navLinks} />
       </header>
-      <main>
+      <main className="flex justify-center  m-20">
         <Outlet />
       </main>
     </>
