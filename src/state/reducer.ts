@@ -60,6 +60,20 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
         ),
       };
 
+    case "ADD_BOOK_REVIEW":
+      return {
+        ...state,
+        readBooks: state.readBooks.map((book) =>
+          book.key === action.payload.bookKey
+            ? {
+                ...book,
+                userRating: action.payload.userRating,
+                userReview: action.payload.userReview,
+                userNumPages: action.payload.userNumPages,
+              }
+            : book
+        ),
+      };
     default:
       return state;
   }

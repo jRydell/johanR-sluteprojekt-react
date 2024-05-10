@@ -14,6 +14,7 @@ const BookCard: React.FC<BookCardProps> = ({
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isRead, setIsRead] = useState(false);
+
   return (
     <section className="border border-gray-300 rounded p-4">
       {book.cover_i ? (
@@ -34,6 +35,10 @@ const BookCard: React.FC<BookCardProps> = ({
       <p className="text-sm text-gray-500">
         First Publish Year: {book.first_publish_year}
       </p>
+
+      <p className="text-sm text-gray-500">Rating: {book.userRating}</p>
+      <p className="text-sm text-gray-500">Review: {book.userReview}</p>
+
       {searchPageButtons && (
         <section className="flex gap-4">
           <button
@@ -60,6 +65,7 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
         </section>
       )}
+
       <div className="flex justify-center">
         {removeFavoriteButton && (
           <button
@@ -71,6 +77,7 @@ const BookCard: React.FC<BookCardProps> = ({
             Remove
           </button>
         )}
+
         {removeReadButton && (
           <button
             onClick={() =>
@@ -81,6 +88,7 @@ const BookCard: React.FC<BookCardProps> = ({
             Remove
           </button>
         )}
+
         {reviewButton && (
           <Link to={`/read-books/review${book.key}`} className="text-blue-500">
             Review

@@ -9,7 +9,7 @@ import FavoriteBooks from "./routes/FavoriteBooks";
 import ReadBooks from "./routes/ReadBooks";
 import FavoriteAuthors from "./routes/FavoriteAuthors";
 import React from "react";
-import Review from "./routes/Review";
+import AddReview from "./routes/AddReview";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/read-books/review/works/:id",
-        element: <Review />,
+        element: <AddReview />,
       },
     ],
   },

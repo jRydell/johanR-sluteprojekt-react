@@ -4,7 +4,16 @@ export type Action =
   | { type: "REMOVE_FAVORITE_BOOK"; payload: Book["key"] }
   | { type: "REMOVE_READ_BOOK"; payload: Book["key"] }
   | { type: "ADD_AUTHOR"; payload: Author }
-  | { type: "REMOVE_AUTHOR"; payload: Author["key"] };
+  | { type: "REMOVE_AUTHOR"; payload: Author["key"] }
+  | {
+      type: "ADD_BOOK_REVIEW";
+      payload: {
+        bookKey: string;
+        userReview: string;
+        userRating: string;
+        userNumPages: string;
+      };
+    };
 
 export type Book = {
   key: string;
