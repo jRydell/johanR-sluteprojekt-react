@@ -7,7 +7,6 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
         (book) => book.key === action.payload.key
       );
       if (favoriteBookExists) {
-        alert(`${action.payload.title} is already in favorite books.`);
         return state;
       } else {
         return {
@@ -21,7 +20,6 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
         (book) => book.key === action.payload.key
       );
       if (readBookExists) {
-        alert(`${action.payload.title} is allready in your read books.`);
         return state;
       } else {
         return {
