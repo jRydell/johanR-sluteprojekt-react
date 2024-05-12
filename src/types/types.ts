@@ -1,6 +1,6 @@
 export type Action =
   | { type: "ADD_FAVORITE_BOOK"; payload: Book }
-  | { type: "ADD_READ_BOOK"; payload: Book }
+  | { type: "ADD_READ_BOOK"; payload: ReadBook }
   | { type: "REMOVE_FAVORITE_BOOK"; payload: Book["key"] }
   | { type: "REMOVE_READ_BOOK"; payload: Book["key"] }
   | { type: "ADD_AUTHOR"; payload: Author }
@@ -12,13 +12,13 @@ export type Book = {
   author_name: string[];
   first_publish_year: number;
   cover_i: string;
-  description: string;
 };
 
 export type ReadBook = {
   key: string;
   title: string;
   author_name: string[];
+  first_publish_year: number;
   cover_i: string;
   userRating: string;
   userReview: string;
