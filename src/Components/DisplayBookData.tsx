@@ -5,9 +5,9 @@ import { renderBooks } from "../utils/renderItems";
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading books...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!data) return <p>No data found.</p>;
+  if (!data) return <p>No books found.</p>;
 
   return (
     <section>

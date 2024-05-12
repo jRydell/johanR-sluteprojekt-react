@@ -5,9 +5,9 @@ import { renderAuthors } from "../utils/renderItems";
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Author[] }>(url);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading authors...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!data) return <p>No data found.</p>;
+  if (!data) return <p>No authors found.</p>;
 
   return (
     <section>

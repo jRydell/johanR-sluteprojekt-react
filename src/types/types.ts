@@ -15,6 +15,16 @@ export type Book = {
   description: string;
 };
 
+export type ReadBook = {
+  key: string;
+  title: string;
+  author_name: string[];
+  cover_i: string;
+  userRating: string;
+  userReview: string;
+  userNumPages: string;
+};
+
 export type Author = {
   key: string;
   name: string;

@@ -2,6 +2,7 @@ import { BookCardProps } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
+import ReviewForm from "./ReviewForm";
 
 const BookCard: React.FC<BookCardProps> = ({
   book,
@@ -47,8 +48,7 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
           <button
             onClick={() => {
-              dispatch({ type: "ADD_READ_BOOK", payload: book });
-              setIsRead(true);
+              setIsRead(!isRead);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
@@ -58,6 +58,15 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
         </section>
       )}
+      {isRead && (
+        <ReviewForm
+          key={book.key}
+          title={book.title}
+          author_name={book.author_name}
+          cover_i={book.cover_i}
+        />
+      )}
+
       <div className="flex justify-center">
         {removeFavoriteButton && (
           <button
