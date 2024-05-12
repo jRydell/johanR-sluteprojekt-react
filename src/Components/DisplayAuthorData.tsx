@@ -1,6 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 import { Author } from "../types/types";
-import { renderAuthors } from "../utils/renderItems";
+import { renderAuthors } from "../utils/renderCards";
 
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Author[] }>(url);

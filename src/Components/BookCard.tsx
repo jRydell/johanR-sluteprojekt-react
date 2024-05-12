@@ -60,7 +60,7 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
           <button
             onClick={() => {
-              setIsRead(!isRead);
+              setIsRead(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
@@ -72,7 +72,7 @@ const BookCard: React.FC<BookCardProps> = ({
       )}
       {isRead && <ReviewForm book={book} />}
 
-      <div className="flex justify-center">
+      <section className="flex justify-center">
         {removeFavoriteButton && (
           <button
             onClick={() =>
@@ -93,7 +93,7 @@ const BookCard: React.FC<BookCardProps> = ({
             Remove
           </button>
         )}
-      </div>
+      </section>
     </section>
   );
 };

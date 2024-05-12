@@ -36,11 +36,11 @@ const ReadBookForm = ({
   };
   return (
     <>
-      <article className=" w-fit">
+      <article className="w-fit">
         <form className="flex flex-col" onSubmit={handleSubmitRead}>
           <>
             <label htmlFor="userReview">Review:</label>
-            <textarea {...userReview} id="userReview" />
+            <textarea {...userReview} id="userReview" autoFocus />
           </>
           <>
             <label htmlFor="userRating ">Rating:</label>
@@ -50,7 +50,12 @@ const ReadBookForm = ({
             <label htmlFor="userNumPages">Number of pages:</label>
             <input type="number" {...userNumPages} id="userNumPages" />
           </>
-          <button type="submit">Add</button>
+          <button
+            className="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
+            type="submit"
+          >
+            Add
+          </button>
         </form>
       </article>
     </>

@@ -1,6 +1,6 @@
 import { useGlobalState } from "../hooks/useGlobalState";
 
-import { renderAuthors } from "../utils/renderItems";
+import { renderAuthors } from "../utils/renderCards";
 
 const FavoriteAuthors = () => {
   const { state } = useGlobalState();
