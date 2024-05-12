@@ -2,6 +2,7 @@ import { BookCardProps } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
+import ReviewForm from "./ReviewForm";
 
 const BookCard: React.FC<BookCardProps> = ({
   book,
@@ -28,10 +29,22 @@ const BookCard: React.FC<BookCardProps> = ({
         />
       )}
       <h3 className="text-lg font-semibold">{book.title}</h3>
-      <p className="text-sm text-gray-500 mb-2">Author: {book.author_name}</p>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500">Author: {book.author_name}</p>
+      <p className="text-sm text-gray-500 mb-2">
         First Publish Year: {book.first_publish_year}
       </p>
+      {book.userReview && (
+        <p className="text-sm text-gray-500">Review: {book.userReview}</p>
+      )}
+      {book.userRating && (
+        <p className="text-sm text-gray-500">Rating: {book.userRating}</p>
+      )}
+      {book.userNumPages && (
+        <p className="text-sm text-gray-500 mb-3">
+          Number of pages: {book.userNumPages}
+        </p>
+      )}
+
       {searchPageButtons && (
         <section className="flex gap-4">
           <button
@@ -47,7 +60,6 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
           <button
             onClick={() => {
-              dispatch({ type: "ADD_READ_BOOK", payload: book });
               setIsRead(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
@@ -58,7 +70,9 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
         </section>
       )}
-      <div className="flex justify-center">
+      {isRead && <ReviewForm book={book} />}
+
+      <section className="flex justify-center">
         {removeFavoriteButton && (
           <button
             onClick={() =>
@@ -79,7 +93,7 @@ const BookCard: React.FC<BookCardProps> = ({
             Remove
           </button>
         )}
-      </div>
+      </section>
     </section>
   );
 };

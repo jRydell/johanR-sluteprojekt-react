@@ -1,5 +1,5 @@
 import { useGlobalState } from "../hooks/useGlobalState";
-import { renderBooks } from "../utils/renderItems";
+import { renderBooks } from "../utils/renderCards";
 
 const FavoriteBooks = () => {
   const { state } = useGlobalState();
