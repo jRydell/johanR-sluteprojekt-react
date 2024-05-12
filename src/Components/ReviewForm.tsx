@@ -14,7 +14,6 @@ const ReadBookForm = ({
   const userRating = useFormInput("");
   const userReview = useFormInput("");
   const userNumPages = useFormInput("");
-  const reset = useFormInput("");
 
   const handleSubmitRead = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,9 +30,9 @@ const ReadBookForm = ({
         userNumPages: userNumPages.value,
       },
     });
-    {
-      reset;
-    }
+    userRating.reset();
+    userReview.reset();
+    userNumPages.reset();
   };
   return (
     <>
