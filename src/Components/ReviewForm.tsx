@@ -1,20 +1,13 @@
 import { useFormInput } from "../hooks/useFormInput";
 import { useGlobalState } from "../hooks/useGlobalState";
+import { Book } from "../types/types";
 
 type ReadBookProps = {
-  key: string;
-  title: string;
-  author_name: string[];
-  cover_i: string;
-  first_publish_year: number;
+  book: Book;
 };
 
 const ReadBookForm = ({
-  key,
-  title,
-  author_name,
-  cover_i,
-  first_publish_year,
+  book: { key, title, first_publish_year, author_name, cover_i },
 }: ReadBookProps) => {
   const { dispatch } = useGlobalState();
 
@@ -41,8 +34,6 @@ const ReadBookForm = ({
   return (
     <>
       <article className=" w-fit">
-        <h2>Add a Review</h2>
-
         <form className="flex flex-col" onSubmit={handleSubmitRead}>
           <>
             <label htmlFor="userReview">Review:</label>
@@ -56,7 +47,7 @@ const ReadBookForm = ({
             <label htmlFor="userNumPages">Number of pages:</label>
             <input type="number" {...userNumPages} id="userNumPages" />
           </>
-          <button type="submit">Submit</button>
+          <button type="submit">Add</button>
         </form>
       </article>
     </>

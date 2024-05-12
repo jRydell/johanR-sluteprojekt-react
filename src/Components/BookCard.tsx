@@ -29,10 +29,22 @@ const BookCard: React.FC<BookCardProps> = ({
         />
       )}
       <h3 className="text-lg font-semibold">{book.title}</h3>
-      <p className="text-sm text-gray-500 mb-2">Author: {book.author_name}</p>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500">Author: {book.author_name}</p>
+      <p className="text-sm text-gray-500 mb-2">
         First Publish Year: {book.first_publish_year}
       </p>
+      {book.userReview && (
+        <p className="text-sm text-gray-500">Review: {book.userReview}</p>
+      )}
+      {book.userRating && (
+        <p className="text-sm text-gray-500">Rating: {book.userRating}</p>
+      )}
+      {book.userNumPages && (
+        <p className="text-sm text-gray-500 mb-3">
+          Number of pages: {book.userNumPages}
+        </p>
+      )}
+
       {searchPageButtons && (
         <section className="flex gap-4">
           <button
@@ -58,14 +70,7 @@ const BookCard: React.FC<BookCardProps> = ({
           </button>
         </section>
       )}
-      {isRead && (
-        <ReviewForm
-          key={book.key}
-          title={book.title}
-          author_name={book.author_name}
-          cover_i={book.cover_i}
-        />
-      )}
+      {isRead && <ReviewForm book={book} />}
 
       <div className="flex justify-center">
         {removeFavoriteButton && (
