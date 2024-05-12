@@ -30,7 +30,12 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
         onChange={(e) => setInput(e.target.value)}
         placeholder={placeholder}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
+        onClick={handleSearch}
+      >
+        Search
+      </button>
       {/* {searchUrl && <DisplayAuthorData url={searchUrl} />} */}
       {searchUrl && <DisplayBookData url={searchUrl} />}
     </section>
