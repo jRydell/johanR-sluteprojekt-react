@@ -9,5 +9,9 @@ export const useFormInput = (initialValue: string) => {
     setValue(e.target.value);
   };
 
-  return { value, onChange: handleChange };
+  const reset = () => {
+    setValue("");
+  };
+
+  return { value, onChange: handleChange, reset };
 };
