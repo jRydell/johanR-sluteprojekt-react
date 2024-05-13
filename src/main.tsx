@@ -10,6 +10,7 @@ import ReadBooks from "./routes/ReadBooks";
 import FavoriteAuthors from "./routes/FavoriteAuthors";
 import React from "react";
 import { GlobalStateProvider } from "./components/GlobalStateProvider";
+import Home from "./routes/Home";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/favorite-authors",
         element: <FavoriteAuthors />,
+      },
+      {
+        path: "/",
+        element: <Home />,
       },
     ],
   },
