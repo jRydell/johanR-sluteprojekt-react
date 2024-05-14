@@ -30,9 +30,6 @@ const ReadBookForm = ({
         numPages: Number(numPages.value),
       },
     });
-    rating.reset();
-    review.reset();
-    numPages.reset();
   };
   return (
     <>
