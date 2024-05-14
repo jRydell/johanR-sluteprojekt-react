@@ -11,7 +11,7 @@ const ReadBooks = () => {
         <h2 className="">Read Books:</h2>
         {state.readBooks.length ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {state.favoriteBooks.map((book: Book) => (
+            {state.readBooks.map((book: Book) => (
               <li key={book.key}>
                 <BookCard
                   book={book}

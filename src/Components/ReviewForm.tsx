@@ -25,14 +25,11 @@ const ReadBookForm = ({
         first_publish_year: first_publish_year,
         author_name: author_name,
         cover_i: cover_i,
-        rating: rating.value,
-        review: review.value,
-        numPages: numPages.value,
+        rating: Number(rating.value),
+        review: String(review.value),
+        numPages: Number(numPages.value),
       },
     });
-    rating.reset();
-    review.reset();
-    numPages.reset();
   };
   return (
     <>

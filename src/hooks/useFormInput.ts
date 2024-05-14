@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useFormInput = (initialValue: string | number) => {
+export const useFormInput = (initialValue: string) => {
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (
@@ -9,9 +9,5 @@ export const useFormInput = (initialValue: string | number) => {
     setValue(e.target.value);
   };
 
-  const reset = () => {
-    setValue(initialValue);
-  };
-
-  return { value, onChange: handleChange, reset };
+  return { value, onChange: handleChange };
 };

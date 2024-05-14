@@ -12,9 +12,9 @@ export type Book = {
   author_name: string[];
   first_publish_year: number;
   cover_i: string;
-  rating: string;
+  rating: number;
   review: string;
-  numPages: string;
+  numPages: number;
 };
 
 export type Author = {
