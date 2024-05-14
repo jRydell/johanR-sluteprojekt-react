@@ -41,9 +41,7 @@ const BookCard: React.FC<BookCardProps> = ({
         <p className="text-sm text-gray-500">Rating: {book.rating}</p>
       )}
       {book.numPages && (
-        <p className="text-sm text-gray-500 mb-3">
-          Number of pages: {book.numPages}
-        </p>
+        <p className="text-sm text-gray-500 mb-3">Number of pages: {book}</p>
       )}
 
       {searchPageButtons && (
