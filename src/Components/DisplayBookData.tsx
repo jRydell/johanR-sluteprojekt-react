@@ -7,7 +7,7 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
 
   if (loading) return <p>Loading books...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!data) return <p>No books found.</p>;
+  if (!data || !data.docs.length) return <p>No books found.</p>;
 
   return (
     <section>
