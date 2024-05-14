@@ -1,5 +1,6 @@
+import BookCard from "../components/BookCard";
 import { useGlobalState } from "../hooks/useGlobalState";
-import { renderBooks } from "../utils/renderCards";
+import { Book } from "../types/types";
 
 const FavoriteBooks = () => {
   const { state } = useGlobalState();
@@ -7,10 +8,24 @@ const FavoriteBooks = () => {
   return (
     <>
       <section className="">
-        <h2 className="">Favorite Books:</h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {renderBooks(state.favoriteBooks, true, false, false)}
-        </ul>
+        <h2 className="">Favorite Authors:</h2>
+        {state.favoriteAuthors.length ? (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {state.favoriteBooks.map((book: Book) => (
+              <li key={book.key}>
+                <BookCard
+                  book={book}
+                  searchPageButtons={false}
+                  removeFavoriteButton={true}
+                  removeReadButton={false}
+                />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No favorite authors found.</p>
+        )}
+        ;
       </section>
     </>
   );
