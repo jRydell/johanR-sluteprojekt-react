@@ -4,12 +4,12 @@ import { Book } from "../types/types";
 
 const FavoriteBooks = () => {
   const { state } = useGlobalState();
-
+  console.log(state.favoriteBooks);
   return (
     <>
       <section className="">
-        <h2 className="">Favorite Authors:</h2>
-        {state.favoriteAuthors.length ? (
+        <h2 className="">Favorite Books:</h2>
+        {state.favoriteBooks.length ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.favoriteBooks.map((book: Book) => (
               <li key={book.key}>
@@ -25,7 +25,6 @@ const FavoriteBooks = () => {
         ) : (
           <p>No favorite books yet.</p>
         )}
-        ;
       </section>
     </>
   );

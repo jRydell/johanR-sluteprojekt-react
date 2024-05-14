@@ -24,7 +24,6 @@ const FavoriteAuthors = () => {
         ) : (
           <p>No favorite authors yet.</p>
         )}
-        ;
       </section>
     </>
   );
