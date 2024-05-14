@@ -11,9 +11,9 @@ const ReadBookForm = ({
 }: ReadBookProps) => {
   const { dispatch } = useGlobalState();
 
-  const rating = useFormInput(0);
+  const rating = useFormInput("");
   const review = useFormInput("");
-  const numPages = useFormInput(0);
+  const numPages = useFormInput("");
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
