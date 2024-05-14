@@ -8,8 +8,8 @@ import FavoriteBooks from "./routes/FavoriteBooks";
 import ReadBooks from "./routes/ReadBooks";
 import FavoriteAuthors from "./routes/FavoriteAuthors";
 import React from "react";
-import { GlobalStateProvider } from "./components/GlobalStateProvider";
 import Home from "./routes/Home";
+import { GlobalStateProvider } from "./components/GlobalStateProvider";
 
 const router = createBrowserRouter([
   {
