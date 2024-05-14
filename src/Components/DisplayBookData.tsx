@@ -1,6 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 import { Book } from "../types/types";
-import { renderBooks } from "../utils/renderCards";
+import BookCard from "./BookCard";
 
 const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
@@ -13,7 +13,16 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
     <section>
       <h2 className="">Search Results:</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {renderBooks(data.docs, false, false, true)}
+        {data.docs.map((book: Book) => (
+          <li key={book.key}>
+            <BookCard
+              book={book}
+              searchPageButtons={true}
+              removeFavoriteButton={false}
+              removeReadButton={false}
+            />
+          </li>
+        ))}
       </ul>
     </section>
   );
