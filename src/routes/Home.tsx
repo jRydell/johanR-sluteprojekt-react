@@ -6,12 +6,12 @@ const Home = () => {
   const totalReadBooks = state.readBooks.length;
   const totalFavoriteBooks = state.favoriteBooks.length;
   const totalPagesRead = state.readBooks.reduce(
-    (total, book) => total + book.numPages,
+    (total, book) => total + Number(book.numPages),
     0
   );
 
   const totalRating = state.readBooks.reduce(
-    (total, book) => total + book.rating,
+    (total, book) => total + Number(book.rating),
     0
   );
   const averageRating = totalReadBooks > 0 ? totalRating / totalReadBooks : 0;
