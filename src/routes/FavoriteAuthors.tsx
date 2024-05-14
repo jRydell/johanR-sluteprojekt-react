@@ -22,7 +22,7 @@ const FavoriteAuthors = () => {
             ))}
           </ul>
         ) : (
-          <p>No favorite authors found.</p>
+          <p>No favorite authors yet.</p>
         )}
         ;
       </section>
