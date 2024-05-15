@@ -3,7 +3,6 @@ import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
-//ändring
 
 const BookCard: React.FC<BookCardProps> = ({
   book,
