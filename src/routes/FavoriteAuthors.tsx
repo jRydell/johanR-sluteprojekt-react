@@ -1,17 +1,36 @@
+import AuthorCard from "../components/AuthorCard";
+import Button from "../components/Button";
 import { useGlobalState } from "../hooks/useGlobalState";
-
-import { renderAuthors } from "../utils/renderCards";
+import { Author } from "../types/types";
 
 const FavoriteAuthors = () => {
-  const { state } = useGlobalState();
+  const { state, dispatch } = useGlobalState();
 
   return (
     <>
       <section className="">
         <h2 className="">Favorite Authors:</h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {renderAuthors(state.favoriteAuthors, true, false)}
-        </ul>
+        {state.favoriteAuthors.length ? (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {state.favoriteAuthors.map((author: Author) => (
+              <li key={author.key}>
+                <AuthorCard author={author} addButton={false} />
+                <Button
+                  handleClick={() =>
+                    dispatch({
+                      type: "REMOVE_FAVORITE_AUTHOR",
+                      payload: author.key,
+                    })
+                  }
+                >
+                  Remove
+                </Button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No favorite authors yet.</p>
+        )}
       </section>
     </>
   );

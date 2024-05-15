@@ -4,17 +4,13 @@ import noCover from "../assets/noCover.svg";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 
-const BookCard: React.FC<BookCardProps> = ({
-  book,
-  searchPageButtons,
-  removeFavoriteButton,
-  removeReadButton,
-}) => {
+const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
+
   const [isRead, setIsRead] = useState(false);
   return (
-    <section className="border border-gray-300 rounded p-4">
+    <section className="">
       {book.cover_i ? (
         <img
           src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
@@ -33,20 +29,20 @@ const BookCard: React.FC<BookCardProps> = ({
       <p className="text-sm text-gray-500 mb-2">
         First Publish Year: {book.first_publish_year}
       </p>
-      {book.userReview && (
-        <p className="text-sm text-gray-500">Review: {book.userReview}</p>
+      {book.review && (
+        <p className="text-sm text-gray-500">Review: {book.review}</p>
       )}
-      {book.userRating && (
-        <p className="text-sm text-gray-500">Rating: {book.userRating}</p>
+      {book.rating && (
+        <p className="text-sm text-gray-500">Rating: {book.rating}</p>
       )}
-      {book.userNumPages && (
+      {book.numPages && (
         <p className="text-sm text-gray-500 mb-3">
-          Number of pages: {book.userNumPages}
+          Number of pages: {book.numPages}
         </p>
       )}
 
-      {searchPageButtons && (
-        <section className="flex gap-4">
+      {addButtons && (
+        <div className="flex gap-4">
           <button
             onClick={() => {
               dispatch({ type: "ADD_FAVORITE_BOOK", payload: book });
@@ -58,42 +54,20 @@ const BookCard: React.FC<BookCardProps> = ({
           >
             {isFavorite ? "Added to Favorites" : "Add to Favorites"}
           </button>
+
           <button
             onClick={() => {
               setIsRead(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
-              isFavorite ? "active:bg-red-500 active:hover:bg-red-700" : ""
+              isRead ? "active:bg-red-500 active:hover:bg-red-700" : ""
             }`}
           >
             {isRead ? "Marked as read" : "Mark as Read"}
           </button>
-        </section>
+        </div>
       )}
       {isRead && <ReviewForm book={book} />}
-
-      <section className="flex justify-center">
-        {removeFavoriteButton && (
-          <button
-            onClick={() =>
-              dispatch({ type: "REMOVE_FAVORITE_BOOK", payload: book.key })
-            }
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700 "
-          >
-            Remove
-          </button>
-        )}
-        {removeReadButton && (
-          <button
-            onClick={() =>
-              dispatch({ type: "REMOVE_READ_BOOK", payload: book.key })
-            }
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
-          >
-            Remove
-          </button>
-        )}
-      </section>
     </section>
   );
 };
