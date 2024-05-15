@@ -7,7 +7,6 @@ import ReviewForm from "./ReviewForm";
 const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
-
   const [isRead, setIsRead] = useState(false);
   return (
     <section className="">
@@ -67,7 +66,9 @@ const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
           </button>
         </div>
       )}
-      {isRead && <ReviewForm book={book} />}
+      {isRead && (
+        <ReviewForm book={book} isRead={isRead} setIsRead={setIsRead} />
+      )}
     </section>
   );
 };
