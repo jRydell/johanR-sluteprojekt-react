@@ -13,7 +13,10 @@ const FavoriteAuthors = () => {
         {state.favoriteAuthors.length ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.favoriteAuthors.map((author: Author) => (
-              <li key={author.key}>
+              <li
+                className="border border-gray-300 rounded p-4"
+                key={author.key}
+              >
                 <AuthorCard author={author} addButton={false} />
                 <Button
                   handleClick={() =>
