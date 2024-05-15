@@ -36,3 +36,8 @@ export type BookCardProps = {
   book: Book;
   addButtons: boolean;
 };
+
+export type SearchComponentProps = {
+  url: string;
+  placeholder: string;
+};

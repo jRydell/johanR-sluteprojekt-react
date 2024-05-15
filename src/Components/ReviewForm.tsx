@@ -4,10 +4,14 @@ import { Book } from "../types/types";
 
 type ReadBookProps = {
   book: Book;
+  isRead: boolean;
+  setIsRead: (isRead: boolean) => void;
 };
 
 const ReadBookForm = ({
   book: { key, title, first_publish_year, author_name, cover_i },
+  isRead,
+  setIsRead,
 }: ReadBookProps) => {
   const { dispatch } = useGlobalState();
 
@@ -50,6 +54,7 @@ const ReadBookForm = ({
           <button
             className="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
             type="submit"
+            onClick={() => setIsRead(!isRead)}
           >
             Submit
           </button>

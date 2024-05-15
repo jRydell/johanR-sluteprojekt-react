@@ -1,16 +1,8 @@
 import { useState } from "react";
-//import DisplayAuthorData from "./DisplayAuthorData";
 import DisplayBookData from "./DisplayBookData";
+import { SearchComponentProps } from "../types/types";
 
-type SearchComponentProps = {
-  url: string;
-  placeholder: string;
-};
-
-const SearchComponent: React.FC<SearchComponentProps> = ({
-  url,
-  placeholder,
-}) => {
+const SearchComponent = ({ url, placeholder }: SearchComponentProps) => {
   const [input, setInput] = useState("");
   const [searchUrl, setSearchUrl] = useState("");
 
