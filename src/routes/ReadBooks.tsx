@@ -13,21 +13,20 @@ const ReadBooks = () => {
         {state.readBooks.length ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.readBooks.map((book: Book) => (
-              <li
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-                key={book.key}
-              >
+              <li key={book.key}>
                 <BookCard book={book} addButtons={false} />
-                <Button
-                  handleClick={() =>
-                    dispatch({
-                      type: "REMOVE_READ_BOOK",
-                      payload: book.key,
-                    })
-                  }
-                >
-                  Remove
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    handleClick={() =>
+                      dispatch({
+                        type: "REMOVE_READ_BOOK",
+                        payload: book.key,
+                      })
+                    }
+                  >
+                    Remove
+                  </Button>
+                </div>
               </li>
             ))}
           </ul>

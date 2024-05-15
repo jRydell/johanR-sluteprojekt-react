@@ -54,6 +54,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
           >
             {isFavorite ? "Added to Favorites" : "Add to Favorites"}
           </button>
+
           <button
             onClick={() => {
               setIsRead(true);

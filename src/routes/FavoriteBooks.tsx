@@ -11,23 +11,22 @@ const FavoriteBooks = () => {
       <section>
         <h2>Favorite Books:</h2>
         {state.favoriteBooks.length ? (
-          <ul>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.favoriteBooks.map((book: Book) => (
-              <li
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-                key={book.key}
-              >
+              <li className="" key={book.key}>
                 <BookCard book={book} addButtons={false} />
-                <Button
-                  handleClick={() =>
-                    dispatch({
-                      type: "REMOVE_FAVORITE_BOOK",
-                      payload: book.key,
-                    })
-                  }
-                >
-                  Remove
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    handleClick={() =>
+                      dispatch({
+                        type: "REMOVE_FAVORITE_BOOK",
+                        payload: book.key,
+                      })
+                    }
+                  >
+                    Remove
+                  </Button>
+                </div>
               </li>
             ))}
           </ul>

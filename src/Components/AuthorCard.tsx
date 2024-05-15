@@ -4,15 +4,10 @@ import { useState } from "react";
 
 type AuthorCardProps = {
   author: Author;
-  addFavoriteButton: boolean;
-  removeFavoriteButton: boolean;
+  addButton: boolean;
 };
 
-const AuthorCard = ({
-  author,
-  addFavoriteButton,
-  removeFavoriteButton,
-}: AuthorCardProps) => {
+const AuthorCard = ({ author, addButton }: AuthorCardProps) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -33,10 +28,10 @@ const AuthorCard = ({
         <p className="text-sm text-gray-500 mb-2">
           Top work: {author.top_work}
         </p>
-        {addFavoriteButton && (
+        {addButton && (
           <button
             onClick={() => {
-              dispatch({ type: "ADD_AUTHOR", payload: author });
+              dispatch({ type: "ADD_FAVORITE_AUTHOR", payload: author });
               setIsFavorite(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
@@ -44,17 +39,6 @@ const AuthorCard = ({
             }`}
           >
             {isFavorite ? "Added to Favorites" : "Add to Favorites"}
-          </button>
-        )}
-
-        {removeFavoriteButton && (
-          <button
-            onClick={() =>
-              dispatch({ type: "REMOVE_AUTHOR", payload: author.key })
-            }
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
-          >
-            Remove
           </button>
         )}
       </section>

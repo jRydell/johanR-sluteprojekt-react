@@ -15,11 +15,7 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.docs.map((author: Author) => (
           <li key={author.key}>
-            <AuthorCard
-              author={author}
-              removeFavoriteButton={false}
-              addFavoriteButton={true}
-            />
+            <AuthorCard author={author} addButton={true} />
           </li>
         ))}
       </ul>
