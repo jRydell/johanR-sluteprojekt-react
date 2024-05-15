@@ -11,16 +11,11 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
 
   return (
     <section>
-      <h2 className="">Search Results:</h2>
+      <h2>Search Results:</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.docs.map((book: Book) => (
-          <li key={book.key}>
-            <BookCard
-              book={book}
-              searchPageButtons={true}
-              removeFavoriteButton={false}
-              removeReadButton={false}
-            />
+          <li className="border border-gray-300 rounded p-4" key={book.key}>
+            <BookCard book={book} addButtons={true} />
           </li>
         ))}
       </ul>

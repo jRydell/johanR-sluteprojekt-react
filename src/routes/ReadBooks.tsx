@@ -1,24 +1,33 @@
 import BookCard from "../components/BookCard";
+import Button from "../components/Button";
 import { useGlobalState } from "../hooks/useGlobalState";
 import { Book } from "../types/types";
 
 const ReadBooks = () => {
-  const { state } = useGlobalState();
+  const { state, dispatch } = useGlobalState();
 
   return (
     <>
-      <section className="">
-        <h2 className="">Read Books:</h2>
+      <section>
+        <h2>Read Books:</h2>
         {state.readBooks.length ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.readBooks.map((book: Book) => (
-              <li key={book.key}>
-                <BookCard
-                  book={book}
-                  searchPageButtons={false}
-                  removeFavoriteButton={false}
-                  removeReadButton={true}
-                />
+              <li
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                key={book.key}
+              >
+                <BookCard book={book} addButtons={false} />
+                <Button
+                  handleClick={() =>
+                    dispatch({
+                      type: "REMOVE_READ_BOOK",
+                      payload: book.key,
+                    })
+                  }
+                >
+                  Remove
+                </Button>
               </li>
             ))}
           </ul>

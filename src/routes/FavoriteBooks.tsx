@@ -1,24 +1,33 @@
 import BookCard from "../components/BookCard";
+import Button from "../components/Button";
 import { useGlobalState } from "../hooks/useGlobalState";
 import { Book } from "../types/types";
 
 const FavoriteBooks = () => {
-  const { state } = useGlobalState();
-  console.log(state.favoriteBooks);
+  const { state, dispatch } = useGlobalState();
+
   return (
     <>
-      <section className="">
-        <h2 className="">Favorite Books:</h2>
+      <section>
+        <h2>Favorite Books:</h2>
         {state.favoriteBooks.length ? (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <ul>
             {state.favoriteBooks.map((book: Book) => (
-              <li key={book.key}>
-                <BookCard
-                  book={book}
-                  searchPageButtons={false}
-                  removeFavoriteButton={true}
-                  removeReadButton={false}
-                />
+              <li
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                key={book.key}
+              >
+                <BookCard book={book} addButtons={false} />
+                <Button
+                  handleClick={() =>
+                    dispatch({
+                      type: "REMOVE_FAVORITE_BOOK",
+                      payload: book.key,
+                    })
+                  }
+                >
+                  Remove
+                </Button>
               </li>
             ))}
           </ul>
