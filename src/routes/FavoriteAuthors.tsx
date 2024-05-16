@@ -18,16 +18,18 @@ const FavoriteAuthors = () => {
                 key={author.key}
               >
                 <AuthorCard author={author} addButton={false} />
-                <Button
-                  handleClick={() =>
-                    dispatch({
-                      type: "REMOVE_FAVORITE_AUTHOR",
-                      payload: author.key,
-                    })
-                  }
-                >
-                  Remove
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    handleClick={() =>
+                      dispatch({
+                        type: "REMOVE_FAVORITE_AUTHOR",
+                        payload: author.key,
+                      })
+                    }
+                  >
+                    Remove
+                  </Button>
+                </div>
               </li>
             ))}
           </ul>
