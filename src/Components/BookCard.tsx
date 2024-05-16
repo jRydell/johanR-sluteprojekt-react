@@ -63,7 +63,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
               isRead ? "active:bg-red-500 active:hover:bg-red-700" : ""
             }`}
           >
-            {isRead ? "Marked as read" : "Mark as Read"}
+            {isRead ? "Added to read books" : "Add to read books"}
           </button>
         </div>
       )}
