@@ -1,10 +1,19 @@
-import { useFetch } from "../hooks/useFetch";
+import { useEffect, useState } from "react";
 import { Author } from "../types/types";
 import AuthorCard from "./AuthorCard";
+import { useFetch } from "../hooks/useFetch";
 
-const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
+const DisplayAuthorData: React.FC<{ url: string }> = ({ url }) => {
   const { data, loading, error } = useFetch<{ docs: Author[] }>(url);
+  const [hasSearched, setHasSearched] = useState(false);
 
+  useEffect(() => {
+    if (url) {
+      setHasSearched(true);
+    }
+  }, [url]);
+
+  if (!hasSearched) return null;
   if (loading) return <p>Loading authors...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!data || !data.docs.length) return <p>No authors found.</p>;
@@ -23,4 +32,4 @@ const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
   );
 };
 
-export default DisplayBookData;
+export default DisplayAuthorData;
