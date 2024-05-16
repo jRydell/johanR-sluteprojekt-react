@@ -44,13 +44,13 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
         ),
       };
 
-    case "ADD_AUTHOR":
+    case "ADD_FAVORITE_AUTHOR":
       return {
         ...state,
         favoriteAuthors: [...state.favoriteAuthors, action.payload],
       };
 
-    case "REMOVE_AUTHOR":
+    case "REMOVE_FAVORITE_AUTHOR":
       return {
         ...state,
         favoriteAuthors: state.favoriteAuthors.filter(

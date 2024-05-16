@@ -8,6 +8,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isRead, setIsRead] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="">
       {book.cover_i ? (
@@ -56,7 +57,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
 
           <button
             onClick={() => {
-              setIsRead(true);
+              setIsOpen(true);
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isRead ? "active:bg-red-500 active:hover:bg-red-700" : ""
@@ -66,8 +67,14 @@ const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
           </button>
         </div>
       )}
-      {isRead && (
-        <ReviewForm book={book} isRead={isRead} setIsRead={setIsRead} />
+      {isOpen && (
+        <ReviewForm
+          book={book}
+          isRead={isRead}
+          setIsRead={setIsRead}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
       )}
     </section>
   );
