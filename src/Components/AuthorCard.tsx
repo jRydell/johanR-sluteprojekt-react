@@ -20,8 +20,8 @@ const AuthorCard = ({ author, addButton }: AuthorCardProps) => {
           className="h-50 w-full object-cover rounded mb-4"
         />
 
-        <h3 className="text-lg font-semibold">{author.name}</h3>
-        <p className="text-sm text-gray-500 mb-2">
+        <h3 className="text-lg font-semibold mb-2">{author.name}</h3>
+        <p className="text-sm text-gray-500 ">
           Date of birth: {author.birth_date}
         </p>
 
