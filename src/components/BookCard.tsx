@@ -30,13 +30,13 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
         First Publish Year: {book.first_publish_year}
       </p>
       {book.review && (
-        <p className="text-sm text-gray-500">Review: {book.review}</p>
+        <p className="text-m text-gray-500">Review: {book.review}</p>
       )}
       {book.rating && (
-        <p className="text-sm text-gray-500">Rating: {book.rating}</p>
+        <p className="text-m text-gray-500">Rating: {book.rating}</p>
       )}
       {book.numPages && (
-        <p className="text-sm text-gray-500 mb-3">
+        <p className="text-m text-gray-500 mb-3">
           Number of pages: {book.numPages}
         </p>
       )}
