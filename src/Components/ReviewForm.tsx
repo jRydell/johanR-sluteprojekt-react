@@ -61,7 +61,7 @@ const ReadBookForm = ({
             className="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
             type="submit"
           >
-            Submit
+            Add
           </button>
         </form>
       </article>
