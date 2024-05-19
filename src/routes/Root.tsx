@@ -12,13 +12,13 @@ function Root() {
 
   return (
     <>
-      <header className="mt-5 ">
-        <h1 className="flex justify-center text-orange-500 mb-5 text-3xl">
+      <header className="mt-5">
+        <h1 className="flex justify-center text-orange-500 mb-10 text-5xl">
           Bookster
         </h1>
         <Navbar links={navLinks} />
       </header>
-      <main className="flex justify-center  m-20">
+      <main className="flex justify-center m-20">
         <Outlet />
       </main>
     </>
