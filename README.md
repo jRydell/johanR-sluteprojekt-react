@@ -2,19 +2,12 @@
 
 Bookster is a web application for book enthusiasts, where users can search for books and retrieve information from Open Library API. Bookster allows users to mark and save favorite books/authors, keep track of read books and create book reviews.
 
-
-       🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🦺🛠️BOOKSTER IS UNDER CONSTRUCTION🛠️🦺🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-
-
-
-
 ## Technologies
 
 - **Vite**: A tool for building modern web projects quickly.
 - **React**: A JavaScript library for creating dynamic and interactive user interfaces.
 - **TypeScript**: A statically typed language that enhances JavaScript with additional safety and code quality features.
 - **Tailwind CSS**: A CSS framework for building responsive and customizable user interfaces with ease.
-
 
 ## Getting Started
 
@@ -86,4 +79,3 @@ I welcome contributions to the project! If you'd like to contribute, follow thes
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
