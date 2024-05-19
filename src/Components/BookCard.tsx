@@ -4,7 +4,7 @@ import noCover from "../assets/noCover.svg";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 
-const BookCard: React.FC<BookCardProps> = ({ book, addButtons }) => {
+const BookCard = ({ book, addButtons }: BookCardProps) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isRead, setIsRead] = useState(false);

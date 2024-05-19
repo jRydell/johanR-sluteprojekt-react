@@ -3,7 +3,7 @@ import { Book } from "../types/types";
 import BookCard from "./BookCard";
 import { useFetch } from "../hooks/useFetch";
 
-const DisplayBookData: React.FC<{ url: string }> = ({ url }) => {
+const DisplayBookData = ({ url }: { url: string }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
   const [hasSearched, setHasSearched] = useState(false);
 

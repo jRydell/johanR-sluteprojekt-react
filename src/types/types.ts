@@ -41,3 +41,30 @@ export type SearchComponentProps = {
   url: string;
   placeholder: string;
 };
+
+export type AuthorCardProps = {
+  author: Author;
+  addButton: boolean;
+};
+
+export type ButtonProps = {
+  children: React.ReactNode;
+  handleClick: () => void;
+};
+
+export type GlobalStateProviderProps = {
+  children: React.ReactNode;
+};
+
+export type Link = {
+  to: string;
+  text: string;
+};
+
+export type ReadBookProps = {
+  book: Book;
+  isRead: boolean;
+  setIsRead: (isRead: boolean) => void;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+};

@@ -1,11 +1,6 @@
-import { Author } from "../types/types";
+import { AuthorCardProps } from "../types/types";
 import { useGlobalState } from "../hooks/useGlobalState";
 import { useState } from "react";
-
-type AuthorCardProps = {
-  author: Author;
-  addButton: boolean;
-};
 
 const AuthorCard = ({ author, addButton }: AuthorCardProps) => {
   const { dispatch } = useGlobalState();

@@ -3,7 +3,7 @@ import { Author } from "../types/types";
 import AuthorCard from "./AuthorCard";
 import { useFetch } from "../hooks/useFetch";
 
-const DisplayAuthorData: React.FC<{ url: string }> = ({ url }) => {
+const DisplayAuthorData = ({ url }: { url: string }) => {
   const { data, loading, error } = useFetch<{ docs: Author[] }>(url);
   const [hasSearched, setHasSearched] = useState(false);
 
