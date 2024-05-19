@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Link } from "../../types/types";
+import { Link } from "../types/types";
 
 const Navbar = ({ links }: { links: Link[] }) => {
   return (

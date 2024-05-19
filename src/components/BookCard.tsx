@@ -1,5 +1,5 @@
-import { BookCardProps } from "../../types/types";
-import { useGlobalState } from "../useGlobalState";
+import { BookCardProps } from "../types/types";
+import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";

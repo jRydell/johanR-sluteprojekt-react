@@ -1,6 +1,6 @@
-import { useFormInput } from "../useFormInput";
-import { useGlobalState } from "../useGlobalState";
-import { ReadBookProps } from "../../types/types";
+import { useFormInput } from "../hooks/useFormInput";
+import { useGlobalState } from "../hooks/useGlobalState";
+import { ReadBookProps } from "../types/types";
 
 const ReadBookForm = ({
   book: { key, title, first_publish_year, author_name, cover_i },

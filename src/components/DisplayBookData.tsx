@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Book } from "../../types/types";
+import { Book } from "../types/types";
 import BookCard from "./BookCard";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../hooks/useFetch";
 
 const DisplayBookData = ({ url }: { url: string }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
