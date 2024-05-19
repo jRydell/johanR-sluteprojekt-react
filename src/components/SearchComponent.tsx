@@ -48,7 +48,7 @@ const SearchComponent = () => {
           placeholder={
             searchType === "books" ? "Enter book title" : "Enter name of author"
           }
-          className="mr-2 "
+          className="mr-2 px-2 py-1"
         />
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
