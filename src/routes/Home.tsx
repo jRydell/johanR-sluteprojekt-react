@@ -24,9 +24,9 @@ const Home = () => {
       <section>
         <h2 className="text center mb-5">Bookster Stats:</h2>
         <ul>
-          <li>Number of read books: {totalReadBooks}</li>
-          <li>Number of favorite books: {totalFavoriteBooks}</li>
-          <li>Number of pages read: {totalPagesRead}</li>
+          <li>Read books: {totalReadBooks}</li>
+          <li>Favorite books: {totalFavoriteBooks}</li>
+          <li>Pages read: {totalPagesRead}</li>
           <li>Average book rating: {averageRating.toFixed(1)}</li>
           <li>Average length of book: {averageLength.toFixed(1)} pages</li>
         </ul>
