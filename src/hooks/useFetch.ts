@@ -24,7 +24,6 @@ export const useFetch = <T>(url: string): ApiResponse<T> => {
 
         const jsonData: T = await response.json();
         setData(jsonData);
-        console.log(jsonData);
       } catch (error: any) {
         setError(error.message);
       } finally {
