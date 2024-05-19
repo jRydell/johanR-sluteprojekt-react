@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Author } from "../types/types";
-import { useFetch } from "../hooks/useFetch";
+import { Author } from "../../types/types";
+import { useFetch } from "../useFetch";
 import AuthorCard from "./AuthorCard";
 
 const DisplayAuthorData = ({ url }: { url: string }) => {
