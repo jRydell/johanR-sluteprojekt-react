@@ -23,7 +23,10 @@ const DisplayBookData = ({ url }: { url: string }) => {
       <h2>Search Results:</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.docs.map((book: Book) => (
-          <li className="border border-gray-300 rounded p-4" key={book.key}>
+          <li
+            className="border border-gray-300 rounded p-4 bg-gray-50 shadow-md"
+            key={book.key}
+          >
             <BookCard book={book} addButtons={true} />
           </li>
         ))}

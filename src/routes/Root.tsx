@@ -12,7 +12,7 @@ function Root() {
 
   return (
     <>
-      <header className="mt-0 py-5 border-b-2 border-gray-300 shadow-lg bg-slate-200">
+      <header className="mt-0 py-5 border-b-2 border-gray-300 shadow-lg  ">
         <h1 className="flex justify-center text-orange-500 mb-10 text-5xl">
           Bookster📚
         </h1>

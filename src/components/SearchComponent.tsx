@@ -28,7 +28,7 @@ const SearchComponent = () => {
 
   return (
     <section className="flex flex-col items-center">
-      <div className="flex flex-row mb-4">
+      <div className="flex flex-row mb-4 border-2 border-gray rounded-md p-1 ">
         <label htmlFor="searchType" className="self-center mr-2">
           Search for:
         </label>
@@ -48,7 +48,7 @@ const SearchComponent = () => {
           placeholder={
             searchType === "books" ? "Enter book title" : "Enter name of author"
           }
-          className="mr-2"
+          className="mr-2 "
         />
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"

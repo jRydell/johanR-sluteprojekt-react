@@ -13,7 +13,10 @@ const FavoriteBooks = () => {
         {state.favoriteBooks.length ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.favoriteBooks.map((book: Book) => (
-              <li className="border border-gray-300 rounded p-4" key={book.key}>
+              <li
+                className="border border-gray-300 rounded p-4 bg-gray-50 shadow-md"
+                key={book.key}
+              >
                 <BookCard book={book} addButtons={false} />
                 <div className="flex justify-center">
                   <Button
