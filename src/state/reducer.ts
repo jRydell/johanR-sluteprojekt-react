@@ -45,10 +45,17 @@ const reducer = (state: GlobalState, action: Action): GlobalState => {
       };
 
     case "ADD_FAVORITE_AUTHOR":
-      return {
-        ...state,
-        favoriteAuthors: [...state.favoriteAuthors, action.payload],
-      };
+      const favoriteAuthorExists = state.favoriteAuthors.some(
+        (author) => author.key === action.payload.key
+      );
+      if (favoriteAuthorExists) {
+        return state;
+      } else {
+        return {
+          ...state,
+          favoriteAuthors: [...state.favoriteAuthors, action.payload],
+        };
+      }
 
     case "REMOVE_FAVORITE_AUTHOR":
       return {
