@@ -14,7 +14,7 @@ const FavoriteBooks = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {state.favoriteBooks.map((book: Book) => (
               <li
-                className="border border-gray-300 rounded p-4 bg-gray-50 shadow-md"
+                className="border border-gray-300 rounded p-4 bg-gray-50 shadow-lg"
                 key={book.key}
               >
                 <BookCard book={book} addButtons={false} />

@@ -25,8 +25,8 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
         />
       )}
       <h3 className="text-lg font-semibold">{book.title}</h3>
-      <p className="text-sm text-gray-500">Author: {book.author_name}</p>
-      <p className="text-sm text-gray-500 mb-2">
+      <p className="text-m text-gray-500">Author: {book.author_name}</p>
+      <p className="text-m text-gray-500 mb-2">
         First Publish Year: {book.first_publish_year}
       </p>
       {book.review && (

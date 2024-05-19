@@ -16,13 +16,11 @@ const AuthorCard = ({ author, addButton }: AuthorCardProps) => {
         />
 
         <h3 className="text-lg font-semibold mb-2">{author.name}</h3>
-        <p className="text-sm text-gray-500 ">
+        <p className="text-m text-gray-500 ">
           Date of birth: {author.birth_date}
         </p>
 
-        <p className="text-sm text-gray-500 mb-2">
-          Top work: {author.top_work}
-        </p>
+        <p className="text-m text-gray-500 mb-2">Top work: {author.top_work}</p>
         {addButton && (
           <button
             onClick={() => {

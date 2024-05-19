@@ -35,19 +35,37 @@ const ReadBookForm = ({
   };
   return (
     <>
-      <article className="w-fit">
+      <article className="w-fit mt-5">
         <form className="flex flex-col" onSubmit={handleSubmit}>
           <>
             <label htmlFor="review">Review:</label>
-            <textarea {...review} id="review" autoFocus />
+            <textarea
+              className="border border-gray-300"
+              {...review}
+              id="review"
+              placeholder="Enter your review here..."
+              autoFocus
+            />
           </>
           <>
             <label htmlFor="rating ">Rating:</label>
-            <input type="number" {...rating} id="rating" />
+            <input
+              className="border border-gray-300"
+              type="number"
+              {...rating}
+              id="rating"
+              placeholder="Enter your rating here..."
+            />
           </>
           <>
             <label htmlFor="numPages">Number of pages:</label>
-            <input type="number" {...numPages} id="numPages" />
+            <input
+              className="border border-gray-300"
+              type="number"
+              {...numPages}
+              id="numPages"
+              placeholder="Enter number of pages here"
+            />
           </>
           <button
             className="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
