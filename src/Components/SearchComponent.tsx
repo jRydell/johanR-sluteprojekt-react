@@ -8,14 +8,15 @@ const SearchComponent = () => {
   const [searchType, setSearchType] = useState("books");
   const [searchTriggered, setSearchTriggered] = useState(false);
 
+  const BASE_URL = "https://openlibrary.org/search";
+
   const handleSearch = () => {
     const formattedInput = input.replace(/ /g, "+");
-    const baseUrl =
+    const url =
       searchType === "books"
-        ? "https://openlibrary.org/search.json?title="
-        : "https://openlibrary.org/search/authors.json?q=";
-    const constructedUrl = `${baseUrl}${formattedInput}`;
-    setSearchUrl(constructedUrl);
+        ? `${BASE_URL}.json?title=`
+        : `${BASE_URL}/authors.json?q=`;
+    setSearchUrl(`${url}${formattedInput}`);
     setSearchTriggered(true);
   };
 
@@ -26,39 +27,46 @@ const SearchComponent = () => {
   };
 
   return (
-    <section>
-      <label className="self-center" htmlFor="searchType">
-        Search for:
-      </label>
-      <select
-        value={searchType}
-        id="searchType"
-        onChange={handleSearchTypeChange}
-      >
-        <option value="books">Books</option>
-        <option value="authors">Authors</option>
-      </select>
+    <section className="flex flex-col items-center">
+      <div className="flex flex-row mb-4">
+        <label htmlFor="searchType" className="self-center mr-2">
+          Search for:
+        </label>
+        <select
+          value={searchType}
+          id="searchType"
+          onChange={handleSearchTypeChange}
+          className="mr-2"
+        >
+          <option value="books">Books</option>
+          <option value="authors">Authors</option>
+        </select>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={
+            searchType === "books" ? "Enter book title" : "Enter name of author"
+          }
+          className="mr-2"
+        />
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
+          onClick={handleSearch}
+        >
+          Search
+        </button>
+      </div>
 
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder={
-          searchType === "books" ? "Enter book title" : "Enter name of author"
-        }
-      />
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none active:bg-red-500 active:hover:bg-red-700"
-        onClick={handleSearch}
-      >
-        Search
-      </button>
-
-      {searchTriggered && searchType === "books" ? (
-        <DisplayBookData url={searchUrl} />
-      ) : searchTriggered && searchType === "authors" ? (
-        <DisplayAuthorData url={searchUrl} />
-      ) : null}
+      {searchTriggered && (
+        <section className="mt-4">
+          {searchType === "books" ? (
+            <DisplayBookData url={searchUrl} />
+          ) : (
+            <DisplayAuthorData url={searchUrl} />
+          )}
+        </section>
+      )}
     </section>
   );
 };
