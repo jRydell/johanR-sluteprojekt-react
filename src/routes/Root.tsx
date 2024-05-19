@@ -12,9 +12,9 @@ function Root() {
 
   return (
     <>
-      <header className="mt-5">
+      <header className="mt-5 py-5">
         <h1 className="flex justify-center text-orange-500 mb-10 text-5xl">
-          Bookster
+          Bookster📚
         </h1>
         <Navbar links={navLinks} />
       </header>
