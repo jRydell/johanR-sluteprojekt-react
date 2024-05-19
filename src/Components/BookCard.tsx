@@ -3,7 +3,7 @@ import { useGlobalState } from "../hooks/useGlobalState";
 import noCover from "../assets/noCover.svg";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
-
+const BookCard = ({ book, addButtons }: BookCardProps) => {
 const BookCard = ({ book, addButtons }: BookCardProps) => {
   const { dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
