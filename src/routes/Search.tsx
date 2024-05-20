@@ -1,11 +1,7 @@
 import SearchComponent from "../components/SearchComponent";
 
 const Search = () => {
-  return (
-    <section>
-      <SearchComponent />
-    </section>
-  );
+  return <SearchComponent />;
 };
 
 export default Search;

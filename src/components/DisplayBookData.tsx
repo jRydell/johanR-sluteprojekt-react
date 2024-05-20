@@ -10,7 +10,7 @@ const DisplayBookData = ({ url }: { url: string }) => {
   if (!data || !data.docs.length) return <p>No books found.</p>;
 
   return (
-    <section>
+    <>
       <h2>Search Results:</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.docs.map((book: Book) => (
@@ -22,7 +22,7 @@ const DisplayBookData = ({ url }: { url: string }) => {
           </li>
         ))}
       </ul>
-    </section>
+    </>
   );
 };
 
