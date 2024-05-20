@@ -10,6 +10,7 @@ Developed by: Johan Rydell
 - **React**
 - **Tailwind CSS**
 - **TypeScript**
+- - **React Router**
 ## Getting Started
 
 To get started with the project, follow these steps:
