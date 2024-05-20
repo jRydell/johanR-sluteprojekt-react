@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
 import { Book } from "../types/types";
 import BookCard from "./BookCard";
 import { useFetch } from "../hooks/useFetch";
 
 const DisplayBookData = ({ url }: { url: string }) => {
   const { data, loading, error } = useFetch<{ docs: Book[] }>(url);
-  const [hasSearched, setHasSearched] = useState(false);
 
-  useEffect(() => {
-    if (url) {
-      setHasSearched(true);
-    }
-  }, [url]);
-
-  if (!hasSearched) return null;
   if (loading) return <p>Loading books...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!data || !data.docs.length) return <p>No books found.</p>;
