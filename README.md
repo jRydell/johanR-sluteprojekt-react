@@ -6,11 +6,10 @@ Developed by: Johan Rydell
 
 ## Technologies
 
-- **Vite**: A tool for building modern web projects quickly.
-- **React**: A JavaScript library for creating dynamic and interactive user interfaces.
-- **TypeScript**: A statically typed language that enhances JavaScript with additional safety and code quality features.
-- **Tailwind CSS**: A CSS framework for building responsive and customizable user interfaces with ease.
-
+- **Vite**
+- **React**
+- **Tailwind CSS**
+- **TypeScript**
 ## Getting Started
 
 To get started with the project, follow these steps:
