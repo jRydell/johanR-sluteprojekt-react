@@ -10,7 +10,7 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
   const [isRead, setIsRead] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="">
+    <>
       {book.cover_i ? (
         <img
           src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
@@ -76,7 +76,7 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
           setIsOpen={setIsOpen}
         />
       )}
-    </section>
+    </>
   );
 };
 
