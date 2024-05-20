@@ -47,36 +47,7 @@ To get started with the project, follow these steps:
    yarn dev
    ```
 
-4. **Open in the browser**: Open your web browser and go to [http://localhost:3000](http://localhost:3000) to see the project in action.
 
-## Contributing
-
-I welcome contributions to the project! If you'd like to contribute, follow these steps:
-
-1. **Fork the project**: Create a fork of this project on GitHub by clicking the "Fork" button on the project page.
-
-2. **Clone your fork**: Clone your fork to your local machine and create a new branch for your work:
-
-   ```bash
-   git clone <your-fork-repo-url>
-   cd <your-fork-directory>
-   git checkout -b my-new-feature
-   ```
-
-3. **Make your changes**: Make the necessary changes and commit them to your branch:
-
-   ```bash
-   git add .
-   git commit -m "Add new feature: <description>"
-   ```
-
-4. **Push your changes**: Push your changes to your fork on GitHub:
-
-   ```bash
-   git push origin my-new-feature
-   ```
-
-5. **Open a pull request**: Go to your fork on GitHub and open a pull request to the original project.
 
 ## License
 
