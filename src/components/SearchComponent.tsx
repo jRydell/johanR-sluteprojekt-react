@@ -44,6 +44,7 @@ const SearchComponent = () => {
         <input
           type="text"
           value={input}
+          id="searchInput"
           onChange={(e) => setInput(e.target.value)}
           placeholder={
             searchType === "books" ? "Enter book title" : "Enter name of author"
