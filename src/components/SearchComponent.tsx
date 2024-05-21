@@ -16,7 +16,7 @@ const SearchComponent = () => {
       searchType === "books"
         ? `${BASE_URL}.json?title=`
         : `${BASE_URL}/authors.json?q=`;
-    setSearchUrl(`${url}${formattedInput}`);
+    setSearchUrl(`${url}${formattedInput}&limit=20`);
     setSearchTriggered(true);
   };
 
