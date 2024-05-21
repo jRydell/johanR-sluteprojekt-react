@@ -5,10 +5,15 @@ import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 
 const BookCard = ({ book, addButtons }: BookCardProps) => {
-  const { dispatch } = useGlobalState();
+  const { state, dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isRead, setIsRead] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const readBookExists = state.readBooks.some(
+    (readBook) => readBook.key === book.key
+  );
+
   return (
     <>
       {book.cover_i ? (
@@ -57,7 +62,9 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
 
           <button
             onClick={() => {
-              setIsOpen(true);
+              if (!readBookExists) {
+                setIsOpen(true);
+              }
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
               isRead ? "active:bg-red-500 active:hover:bg-red-700" : ""
