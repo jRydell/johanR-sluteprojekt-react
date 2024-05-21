@@ -33,7 +33,7 @@ const ReadBooks = () => {
           ))}
         </ul>
       ) : (
-        <p>No favorite books yet.</p>
+        <p>No read books yet.</p>
       )}
     </section>
   );
