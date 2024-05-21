@@ -68,3 +68,9 @@ export type ReadBookProps = {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 };
+
+export type ApiResponse<T> = {
+  data: T | null;
+  loading: boolean;
+  error: string | null;
+};

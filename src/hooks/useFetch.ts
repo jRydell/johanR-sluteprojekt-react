@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-
-type ApiResponse<T> = {
-  data: T | null;
-  loading: boolean;
-  error: string | null;
-};
+import { ApiResponse } from "../types/types";
 
 export const useFetch = <T>(url: string): ApiResponse<T> => {
   const [data, setData] = useState<T | null>(null);
