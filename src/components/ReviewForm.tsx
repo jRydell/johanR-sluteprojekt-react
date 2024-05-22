@@ -1,14 +1,14 @@
 import { useFormInput } from "../hooks/useFormInput";
 import { useGlobalState } from "../hooks/useGlobalState";
-import { ReadBookProps } from "../types/types";
+import { ReviwFormProps } from "../types/types";
 
-const ReadBookForm = ({
-  book: { key, title, first_publish_year, author_name, cover_i },
+const ReviewForm = ({
+  book,
   isRead,
   setIsRead,
-  isOpen,
-  setIsOpen,
-}: ReadBookProps) => {
+  reviewFormOpen,
+  setReviewFormOpen,
+}: ReviwFormProps) => {
   const { dispatch } = useGlobalState();
 
   const rating = useFormInput("");
@@ -27,22 +27,24 @@ const ReadBookForm = ({
       return;
     }
 
+    const readBook = {
+      key: book.key,
+      title: book.title,
+      first_publish_year: book.first_publish_year,
+      author_name: book.author_name,
+      cover_i: book.cover_i,
+      rating: rating.value,
+      review: review.value,
+      numPages: numPages.value,
+    };
+
     dispatch({
       type: "ADD_READ_BOOK",
-      payload: {
-        key,
-        title,
-        first_publish_year,
-        author_name,
-        cover_i,
-        rating: rating.value,
-        review: review.value,
-        numPages: numPages.value,
-      },
+      payload: readBook,
     });
 
     setIsRead(!isRead);
-    setIsOpen(!isOpen);
+    setReviewFormOpen(!reviewFormOpen);
   };
 
   return (
@@ -87,4 +89,4 @@ const ReadBookForm = ({
   );
 };
 
-export default ReadBookForm;
+export default ReviewForm;

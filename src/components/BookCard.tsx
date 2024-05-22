@@ -8,7 +8,7 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
   const { state, dispatch } = useGlobalState();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isRead, setIsRead] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [reviewFormOpen, setReviewFormOpen] = useState(false);
 
   const readBookExists = state.readBooks.some(
     (readBook) => readBook.key === book.key
@@ -63,7 +63,7 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
           <button
             onClick={() => {
               if (!readBookExists) {
-                setIsOpen(true);
+                setReviewFormOpen(true);
               }
             }}
             className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none ${
@@ -74,13 +74,13 @@ const BookCard = ({ book, addButtons }: BookCardProps) => {
           </button>
         </div>
       )}
-      {isOpen && (
+      {reviewFormOpen && (
         <ReviewForm
           book={book}
           isRead={isRead}
           setIsRead={setIsRead}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          reviewFormOpen={reviewFormOpen}
+          setReviewFormOpen={setReviewFormOpen}
         />
       )}
     </>

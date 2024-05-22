@@ -61,12 +61,12 @@ export type Link = {
   text: string;
 };
 
-export type ReadBookProps = {
+export type ReviwFormProps = {
   book: Book;
   isRead: boolean;
   setIsRead: (isRead: boolean) => void;
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  reviewFormOpen: boolean;
+  setReviewFormOpen: (reviewFormOpen: boolean) => void;
 };
 
 export type ApiResponse<T> = {
