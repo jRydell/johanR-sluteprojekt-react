@@ -27,7 +27,7 @@ const ReviewForm = ({
       return;
     }
 
-    const readBook = {
+    const newBook = {
       key: book.key,
       title: book.title,
       first_publish_year: book.first_publish_year,
@@ -40,7 +40,7 @@ const ReviewForm = ({
 
     dispatch({
       type: "ADD_READ_BOOK",
-      payload: readBook,
+      payload: newBook,
     });
 
     setIsRead(!isRead);
